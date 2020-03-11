@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<script type="text/javascript" src="sound-Setup.js"></script>
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<!--Main Header-->
+<header><h1><center>WLAN Training Walkthroughs - Interoperability Testing</center></h1></header>
+
+<!--Navigation List-->
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+<title>Interoperability Testing</title>
+<!--Body Paragraphs-->
+<h3 style="background-color:#white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><strong><center>IOL Interop Ping Tool</center></strong></font></h2>
+<p><center><strong></strong><center></p><br>
+<p><a class="hover" href="InteropSetup.html"><button style="border:2px; border-style:solid; border-color:black;  background-color: white;font-size: 30px; color: #1a1aff; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Interoperability Setup Page</button></a></p>
+<br>
+
+
+
+<h5>There isn't all too much to determine a pass or fail within the Interoperability test suite:<br>In all cases, verify that the STA and AP connect properly and the STA responds with ICMP responses and the AP passes ICMP echo requests and responses without error and with a ping loss percentage no greater than 5%.<br>We have a tool that is very helpful in determining this</h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>IOL Interop Splash Screen</strong><center></p>
+	<img src="Images/Interop/int1.png" 
+	alt="MAC Button" style="width:484px;height:403px;border:0;">
+	<h5><center>Once you launch the Interop ping tool, select either APUT or STAUT<center></h5>
+	
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Configuration/Test Screen</strong><center></p>
+	<img src="Images/Interop/int2.png" 
+	alt="MAC Button" style="width:670px;height:449px;border:0;">
+	<h5>There's a few things we need to do here to Configure everything. The STA1 IP address is the DUT IP address. STA2 IP Address is only used for test 1.5 (Which would be the IP of the Legacy device you are using to test). Test number doesn't matter too much for tests 1.1-1.4. The Ping section in the very top right is very useful for troubleshooting. You can either choose to send ping requests to STA1, STA2 or both to see which is responding (or not). The Continuous box sends continuous pings, this can be used if you are configuring a device that is not responding with replies. Same with the slow option, this can be used to send pings in reduced time for help with troubleshooting.</h5>
+	
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Running The Test</strong><center></p>
+	<img src="Images/Interop/int3.png" 
+	alt="MAC Button" style="width:726px;height:165px;border:0;">
+	<h5><center>Once set up correctly, run a test run, you should see ping replies cycling through.You can see the amount of time each ping takes to reach the TS to the right.<center></h5>
+	
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Results</strong><center></p>
+	<img src="Images/Interop/int4.png" 
+	alt="MAC Button" style="width:177px;height:232px;border:0;">
+	<h5><center>This is displayed on the right hand side, it will tell you if it Passed or Failed.<br> a Fail constitutes ping loss greater than 5%.<center></h5><br><br><br><br>
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+<audio>
+<source src="boop2.mp3">
+<source src="click.ogg">
+</audio>
+<div id="sounddiv"><bgsound id="sound"></div>
+</html>

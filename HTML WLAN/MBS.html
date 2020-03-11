@@ -1,0 +1,532 @@
+<html>
+<!--Welcome To The MAC BASE STA HTML File
+Hunter Holcombe - UNH-IOL 2016-->
+<head>
+<!--Links and Scripts-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!--All Located in The CSS Sheet-->
+</style>
+<!--Main Header-->
+<header><h1 id="myP" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>WLAN Training: MAC BASE Testing For Stations (STAUT)</center></h1></header>
+
+<!--Navigation List-->
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+<title>MAC Base Station</title>
+</head>
+<body>
+	<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>These are all Visual Representations of what a Perfect Pass Looks Like for MAC Base Testing on a STA!<center></h2>
+	<center><ul style = "max-width:1500px">
+
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+
+<!--Intro Paragraphs-->
+<!--Links to Jump around the page-->
+<h4 style="font-size: 20px; color:black;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); "><center>-Jump to a Specific Group of Tests-<center></h2>
+<center>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.1.1"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 1 - Default Configuration</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.2.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 2 - RTS and Fragmentation</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.3.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 3 - WEP and Powersave</button></a></p>
+	<br><br><center><a href="#x" align="center" title="Not all frames will be in perfect order.&#013;There are various sections shortened on this page to show specifically what to look for.&#013;The Babble frames are the bright yellow frames - these are purely informational (titles basically).&#013;The actual test MSDU/MPDU frame(s) shall be present after the babble frame.&#013;We are looking for how the DUT behaves with the reception of each test frame mostly.&#013;Other tests might require you to look deeper into frames to see specific values to determine if it's a Pass or Fail case&#013(Don't worry - it's not as hard as it looks - it just takes a little practice).&#013;Lastly it's okay to take periodic breaks and Happy MAC Testing!" style="padding:5px;text-align: center;border:2px; border-style:solid; border-color:black;background-color:white;color:#000000;text-decoration:none">Hover Here For Additional Information</a></center></center><br></center></center></center>
+</ul>
+<!--Test 1.1.1 - COMPLETE-->
+	<a id="1.1.1"></a>
+
+<br>
+	<h2 style="border-bottom: 2px solid darkred; border: 3px solid darkred;background-color: white;"><center><strong>Group 1 - Default Configuration</strong></center></ul></h2>
+
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>STAUT Base Test 1.1.1 - Frame Processing <br>IEEE Std 802.11™-2012 Edition, Clause 8, Subclause 9.3.2.8, 10.3.5.3, and Annex J.5</strong></center></h2>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;">
+<center><strong>Test 1.1.1 Part a</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.1amb.png" 
+	alt="MAC Button" style="float:left;width:606px;height:60px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	
+	<center><img src="Images/MacBase/1.1.1a2.png" 
+	alt="MAC Button" style="width:667px;height:89px;border:0; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center><u>This is a failure Case</u><br>The STAUT <u>should not</u> acknowledge frames MSDU1-MSDU4 as well as continue to operate afterwards.<br>As you see here, The STAUT Acknoledges MSDU3 on frame 1849 making it a fail.</center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.1bsb.png" 
+	alt="MAC Button" style="float:left;width:593px;height:182px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:-10px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.1b.png" 
+	alt="MAC Button" style="width:603px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT <u>should</u> acknowledge frames MSDU5-MSDU12 as well as continue to operate. <br>As you see here, The STAUT acknowledges (on Frame 386) the MSDU4 frame (Frame 385).</center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part c</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.1css.png" 
+	alt="MAC Button" style="float:left;width:591px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.1c2.png" 
+	alt="MAC Button" style="width:651px;height:106px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT should receive frames MSDU13 + MSDU14a-MSDU14j without system failure.<br>It is okay for the STAUT to Acknowledge these frames. <br>Currently the Test suite has some numbers mixed up, that is why we are seeing MSDU13d instead of 14d</center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+
+	
+<!--1.1.2 - COMPLETE-->
+	<div class="followMeBar"><h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: white"><center><strong>STAUT Base Test 1.1.2 - Null Data Processing <br> IEEE Std 802.11™-2012 Edition, Subclauses 8.2.4.1, 8.3.2, and 9.3.2.2</strong></center></h2></div>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part a</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.2as.png" 
+	alt="MAC Button" style="float:left;width:548px;height:27px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.2a2.png" 
+	alt="MAC Button" style="width:645px;height:77px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT <u>should not</u> acknowledge frames MSDU1-MSDU2. <br>As you see here, MSDU2 (frame 317) is not responded to</center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.2bs.png" 
+	alt="MAC Button" style="float:left;width:548px;height:153px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.2b2.png" 
+	alt="MAC Button" style="width:644px;height:90px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT <u>should</u> acknowledge frames MSDU3-MSDU11.<br>
+	As you see here, MSDU4 (frame 441) is acknowledged.</center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.3 - COMPLETE-->
+	<a id="1.1.3"></a>
+	<div class="followMeBar"><h2 style="border:1px; border-style:solid; border-color:black;background-color: white; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.3 - Deauthentication Processing<br> IEEE Std 802.11™-2012  Edition, Subclauses 10.3, 4.5, 8.4.1.7, 9.3.2.2, and Annex J </strong></center></h2></dive>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part a</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.3as.png" 
+	alt="MAC Button" style="float:left;width:548px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.3a.png" 
+	alt="MAC Button" style="width:636px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT <u>should not</u> pass either Class 2 or 3 traffic after processing MSDU1 (Deauthentication frame 347).<br>As you see here, the STAUT acknowledges MSDU1 on frame 348 (processing it),<br> the TS then sends an Echo (ping) request on frame 393, and lastly the STAUT Deauthenticates on frame 395 due to class 3 traffic being sent.
+	</center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.3bs.png" 
+	alt="MAC Button" style="float:left;width:495px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.3b - Processed.png" 
+	alt="MAC Button" style="width:638px;height:150px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center><strong><u>This Test is Informational Only</u></strong><br>Once The STAUT Recieves MSDU2 (Deauthentication frame 3424),<br>
+	Observe How The STAUT Responds to the frame.<br> (Does the STAUT stop responding, does it process the Frame, or does it completely ignore it?).<br> As you see here, This is an example of MSDU2 not being processed.<br> We know this because of the successful Echo (ping) Request/Reply following it.</center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part c</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.3cs.png" 
+	alt="MAC Button" style="float:left;width:498px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.3c.png" 
+	alt="MAC Button" style="width:618px;height:211px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The STAUT <u>should not</u> acknowledge MSDU3 (Deauthentication frame 3695),<br> it also <u>should Not</u> Be Processed. It is okay for the frame to repeat like this. <br>As you see here, it is not responded to and is followed by a successful Echo (ping) Request/Reply <br>further indicating that the frame wasn't processed.</center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.4 - COMPLETE-->
+	<a id="1.1.4"></a>
+	<center><h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.4 - Open System Authentication Processing<br> IEEE Std 802.11™-2012 Edition, Subclauses 10.3, 4.5, 9.3.2.2, and Annex J </strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.4as.png" 
+	alt="MAC Button" style="float:left;width:532px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.4a2.png" 
+	alt="MAC Button" style="width:663px;height:105px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a fail case</u><br>The STAUT should authenticate successfully followed by attempting to associate for status code 0 (MSDU1a). In this case, the STAUT did not attempt to associate whatsoever.<br>The STAUT should then do the opposite and not attempt association upon reception of MSDU1b-e.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.4bs.png" 
+	alt="MAC Button" style="float:left;width:532px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.4b2.png" 
+	alt="MAC Button" style="width:663px;height:209px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a fail case</u><br>The STAUT should unsuccessfully authenticate and not attempt to associate<br>Here, we see the STAUT succsessfully authenticate<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.4cs.png" 
+	alt="MAC Button" style="float:left;width:532px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.4c2.png" 
+	alt="MAC Button" style="width:672px;height:195px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a fail case</u><br>The STAUT should do the same as 1.1.4b, unsuccessfully authentication and not attempt to associate<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.4ds.png" 
+	alt="MAC Button" style="float:left;width:532px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.4d2.png" 
+	alt="MAC Button" style="width:653px;height:107px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>Another fail case</u><br>The STAUT should not acknowledge MSDU4, nor process this frame<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.5 COMPLETE-->
+	<a id="1.1.5"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.5 - Association Processing<br>IEEE Std 802.11™-2012 Edition, Subclauses 10.3, 4.5, and 9.3.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.5as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:93px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.5a2.png" 
+	alt="MAC Button" style="width:670px;height:169px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>We are looking if the STAUT can associate here<br>as we can see, the STAUT was able to successfully associate by looking at the Null Function frame - which is class 3 traffic<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.5as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:93px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.5b2.png" 
+	alt="MAC Button" style="width:662px;height:253px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, we are looking for the STAUT to acknowledge the frame but not be able to pass 3 traffic.<br>Here we see just that<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part c-f</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.5as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:93px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.5c2.png" 
+	alt="MAC Button" style="width:597px;height:168px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>We are just looking for the STAUT to successfully associate and pass class 3 traffic without system failures for parts c-f. <center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.6 - COMPLETE-->
+	<a id="1.1.6"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.6 - Disassociation Processing<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3, 8.4.1.7, and 9.3.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.6as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.6a.png" 
+	alt="MAC Button" style="width:586px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> process MSDU1 (frame 291) <br>followed by <u>not</u> passing any Class 3 traffic (frame 346). <br>As you see here, the STAUT responds with a Deathentication frame (frame 348) which makes this a pass!<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.6bs.png" 
+	alt="MAC Button" style="float:left;width:540px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.6b - Not Processed.png" 
+	alt="MAC Button" style="width:599px;height:152px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Test is Informational Only</u><br>Once The STAUT Recieves MSDU2 (frame 3846), <br>Observe its behavior,<br> (Does the STAUT stop responding, does it process the Frame, or does it completely ignore it?)<br>
+	Here, the STAUT completely ignores MSDU2 and successfully passes class 3 traffic (frames 3909-3912).<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.6cs.png" 
+	alt="MAC Button" style="float:left;width:540px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.6c.png" 
+	alt="MAC Button" style="width:621px;height:122px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT Should not Acknowledge nor process MSDU3 (frame 5289)<br>and continue to pass class 3 traffic<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.7-->
+	<a id="1.1.7"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.7 - Reassociation Processing<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3, 9.3.2.2, and 10.3.5.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:105px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.7a2.png" 
+	alt="MAC Button" style="width:778px;height:171px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>We are just looking for the STAUT to reassociate successfully and pass class 3 traffic here.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:105px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.7bs.png" 
+	alt="MAC Button" style="width:671px;height:241px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure Case</u><br>The STAUT should send an acknowledgement for the test frames without failure, it should also not attempt to transmit class 3 traffic<br>This STAUT in particular couldn't correctly follow through with the reassociation procedure so it was sending a normal association instead of a reassociation. This case would be RTC with the comment being something like "due to the DUT not properly reassociating, this test could not be completed"<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part c - f</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:105px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.7a2.png" 
+	alt="MAC Button" style="width:778px;height:171px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Due to this test case recieving frequent failures finding traces, I'm using the same trace above,<br>the STAUT should successfully (re)associate and transmit class 3 traffic without failure, by now we should know what this looks like. <center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.8 - COMPLETE-->
+	<a id="1.1.8"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.8 - State Variables and Services<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8as.png" 
+	alt="MAC Button" style="float:left;width:423px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.8a.png" 
+	alt="MAC Button" style="width:597px;height:257px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> respond to MSDU2, MSDU4 (frame 130)<br> and MSDU5 (frame 184) <br>with Deathentication frames<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8bs.png" 
+	alt="MAC Button" style="float:left;width:429px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.8b.png" 
+	alt="MAC Button" style="width:593px;height:271px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> respond to MSDU6-7 (frame 297)<br> and MSDU9-16 (frame 438) <br>with Deathentication frames<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8bs.png" 
+	alt="MAC Button" style="float:left;width:429px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.8c.png" 
+	alt="MAC Button" style="width:580px;height:166px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> respond to MSDU6-7 (frame 809)<br> and MSDU9-16 <br>with a Deathentication OR Disassociation frame.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8ds.png" 
+	alt="MAC Button" style="float:left;width:423px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.8d.png" 
+	alt="MAC Button" style="width:593px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> respond to MSDU8 (frame 4654)<br> with a Probe Response frame (frame 4656) for all cases of MSDU8.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.9 - COMPLETE-->
+	<a id="1.1.9"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.9 - Acknowledgement and Duration Field Validation<br> IEEE Std 802.11™-2012 Edition, Subclauses 7.2.1.3, 9.3.2.2, 9.3.2.8, and 9.7</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9as.png" 
+	alt="MAC Button" style="float:left;width:589px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.9a.png" 
+	alt="MAC Button" style="width:530px;height:203px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should respond to MSDU1 (frame 100)<br> with an Acknowledgement (Frame 101) with duration field = 0<br> To see the duration field, click on the Acknowledgement frame,<br> it is located under the IEEE 802.11 Acknowledgement header<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9bs.png" 
+	alt="MAC Button" style="float:left;width:589px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.9b.png" 
+	alt="MAC Button" style="width:400px;height:395px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> Acknowledge the first fragment of MSDU2<br>(frame 130) with duration field = to Some Number,<br> The STAUT <u>should also</u> Acknowledge the second fragment of MSDU2 <br>(frame 132) with duration field = 0 <br>To see the duration field, click on the Acknowledgement frame, it is located under the IEEE 802.11 Acknowledgement header<br><center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9cs.png" 
+	alt="MAC Button" style="float:left;width:589px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.9c.png" 
+	alt="MAC Button" style="width:589px;height:164px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> transmit an acknowledgement upon reception of MSDU3 (frame 213).<br> The STAUT should also <u>not</u> transmit any acknowledgments upon reception of MSDU4 (frame 228). As you see here, you see the STAUT do just that!<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9ds.png" 
+	alt="MAC Button" style="float:left;width:591px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.9d.png" 
+	alt="MAC Button" style="width:540px;height:239px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> Acknowledge the first fragment of MPDU8 (frame 235)<br> containging a duration field = to Some Number not 0.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part e</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9es.png" 
+	alt="MAC Button" style="float:left;width:591px;height:13px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.9e.png" 
+	alt="MAC Button" style="width:648px;height:77px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should</u> acknowledge MSDU7 (frame 376).<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.10 - COMPLETE-->
+	<a id="1.1.10"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.10 - Defragmentation<br> IEEE Std 802.11™-2012 Edition, Subclause 9.2.7 and 9.6</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.10 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.10as.png" 
+	alt="MAC Button" style="float:left;width:416px;height:32px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.10a2.png" 
+	alt="MAC Button" style="width:667px;height:337px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this test, the STAUT should defragment MSDU1 for each of the fragmentation thresholds. <br>The STAUT should then forward an ICMP Echo Response frame for each transmission of MSDU1.<br>Here, we see just that<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.11 - COMPLETES-->
+	<a id="1.1.11"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.1.11 - Information Element Formatting<br> IEEE Std 802.11™-2012 Edition, Subclauses 8.3.3.2, 8.3.3.10, and 8.4.2.14</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.11 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.11as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:183px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-450px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.11a2.png" 
+	alt="MAC Button" style="width:846px;height:365px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one is pretty simple, we are looking for MSDU1 to be acknowledged<br>MSDU1r to be discarded<br>and the frame composed of MPDU3a and MPDU3b to be responded to with an ICMP Echo Response frame<center></h5>
+	<br>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.11 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.11as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:183px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-450px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.11b2.png" 
+	alt="MAC Button" style="width:870px;height:541px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>We are looking for if the STAUT is using an incremented sequence number for all transmitted frames. The STAUT should also acknowledge and forward an ICMP Echo Response frame to every MPDU<center></h5>
+	<br>
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+
+	
+<!--1.2.1 - COMPLETE-->
+	<a id="1.2.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border: 2px solid darkred;background-color: white; "><center><strong>Group 2 - RTS and Fragmentation</strong></center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>STAUT Base Test 1.2.1 - Recovery Procedure and Retransmit Limits<br> IEEE Std 802.11™-2012 Edition, Subclause 9.3.4.4</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.1a.png" 
+	alt="MAC Button" style="width:666px;height:497px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of Request-to-send (RTS) frames<br> in response to MSDU2 (frame 216)<br> the value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<br> Each Request-to-send frame should have the retry bit set to 0<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1as.png" 
+	alt="MAC Button" style="float:left;width:540px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.1b.png" 
+	alt="MAC Button" style="width:666px;height:498px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of ICMP Echo Replies in response to MSDU2 (frame 380).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1cs.png" 
+	alt="MAC Button" style="float:left;width:435px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.1c.png" 
+	alt="MAC Button" style="width:643px;height:405px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will also see a bunch of ICMP Echo Replies in response to MSDU1 (frame 574).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>
+	Test 1.2.1 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1cs.png" 
+	alt="MAC Button" style="float:left;width:435px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.1e.png" 
+	alt="MAC Button" style="width:648px;height:375px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a lot of Fragmented Frames in response to the ICMP Echo Request (Frame 203). The STAUT should not attempt to transmit any other fragments than the first fragment<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+
+<!--1.2.2 COMPLETE-->
+	<a id="1.2.2"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.2.2 - RTS/CTS and Directed MPDU Transfer<br> IEEE Std 802.11™-2012 Edition, Subclauses 9.3.2.5, 9.3.2.6, 9.3.5, and 8.3.1</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2as.png" 
+	alt="MAC Button" style="float:left;width:453px;height:43px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.2a.png" 
+	alt="MAC Button" style="width:619px;height:331px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>There are 3 parts to this:<br>1. The STAUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU1 (frame 267)<br>2. The STAUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU2 (frame 281)<br>3. The STAUT <u>should</u> use RTS/CTS prior to the ICMP Echo Response to MSDU3 (frame 298) - RTS/CTS on frames 296-297.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2bs.png" 
+	alt="MAC Button" style="float:left;width:453px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.2d.png" 
+	alt="MAC Button" style="width:600px;height:318px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This is the same as 1.2.2a - There are 3 parts to this:<br>1. The STAUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU5 (frame 139)<br>2. The STAUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU6 (frame 153)<br>3. The STAUT <u>should</u> use RTS/CTS prior to the ICMP Echo Response to MSDU7 (frame 170) - RTS/CTS on frames 168-169.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2cs.png" 
+	alt="MAC Button" style="float:left;width:453px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.2b.png" 
+	alt="MAC Button" style="width:632px;height:165px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>should ONLY</u> use RTS/CTS prior to the first fragment for the ICMP Echo response to MSDU4 (Fragmented frame 327)<br><center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2ds.png" 
+	alt="MAC Button" style="float:left;width:453px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.2b.png" 
+	alt="MAC Button" style="width:632px;height:165px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Currently the script is sending MSDU4 instead of MSDU8, This is essentially testing the same thing as 1.2.2 Part b though - this is a pass<center></h5>
+
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.2.3 (Skipped For Now)-->
+	<a id="1.2.3"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.2.3 - Broadcast and Multicast MPDU Transfer<br> IEEE Std 802.11™-2012  Edition, Subclause 9.3.6 </strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3as.png" 
+	alt="MAC Button" style="float:left;width:369px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.3a2.png" 
+	alt="MAC Button" style="width:1050px;height:694px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Few things to check off here<br>The STAUT uses CTS/RTS before it sends the ICMP Echo Response.<br>The more fragments bit is set in all but the last fragment<br>correctly set the destination address<br>same sequence number in all fragments<br>finally an incrementing fragment number<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3bs.png" 
+	alt="MAC Button" style="float:left;width:515px;height:60px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.3b2.png" 
+	alt="MAC Button" style="width:809px;height:255px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one is pretty simple<br>we need to check that the size of each fragment is even and that it isn't larger than the set threshold (399 for this particular trace)<center></h5>
+
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+
+	
+
+<!--1.2.4 COMPLETE-->
+	<a id="1.2.4"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.2.4 - Multirate Support<br> IEEE Std 802.11™-2012 Edition, Subclause 9.7</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.4 Parts a-f</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.4as.png" 
+	alt="MAC Button" style="float:left;width:346px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.5a.png" 
+	alt="MAC Button" style="width:640px;height:355px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>CHECK THIS DESCRIPTION This test sounds complicated but is pretty simple, we are just checking that the STAUT transmits Control response frames (CTS and ACK frames) at one of the basic rates in the BSSBasicRateSet at a rate less than or equal to the rate of the previous frame sent.<br>For Part a-c<br> Basic Rates = 1 and 2<br>Extended Rates = 5.5 and 11<br>For Parts d-f<br>Basic Rates = 6, 12, and 24<br>Extended Rates = 9, 18, 36, 48, and 54
+	<center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+<!--1.2.5 COMPLETE-->
+	<a id="1.2.5"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.2.5 - Multirate Selection Algorithm
+	<br>IEEE Std 802.11™-2012 Edition, Subclauses 9.7 and 9.7.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.5 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.5ass.png" 
+	alt="MAC Button" style="float:left;width:422px;height:88px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.5as.png" 
+	alt="MAC Button" style="width:678px;height:393px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should respond to MSDU1 (frame172) with a rate within the BSS Basic Rate set<br>Basic Rates = 1 and 2<br>Extended Rates = 5.5 and 11<br>Basic Rates = 6, 12, and 24<br>Extended Rates = 9, 18, 36, 48, and 54<br><center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+<!--1.2.6 (Skipped For Now)-->
+	<a id="1.2.6"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.2.6 - Defragmentation using RTS/CTS<br> IEEE Std 802.11™-2012 Edition, Subclause 9.2.7 and 9.6</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.6 Part a</strong><center></h2><center>
+	<center><img src="Images/MacBase/1.2.6as.png" 
+	alt="MAC Button" style="float:left;width:422px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.2.6a.png" 
+	alt="MAC Button" style="width:645px;height:317px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>So for this test the STAUT is supposed to defragment MSDU1 (frame 149 is the defragmented frame). <br>The STAUT should then use the RTS/CTS procedure (frames 151-152)<br> Finally the STAUT should forward a response to the TS (frame 153).</center></h5>
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+
+<!--1.3.1 COMPLETE-->
+	<a id="1.3.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred;background-color: white; "><center><strong>Group 3 - WEP and Powersave</strong></center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black;background-color: white; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.3.1 - WEP Decryption Procedure<br> IEEE Std 802.11™-2012 Edition, Clause 11.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part a-b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1as.png" 
+	alt="MAC Button" style="float:left;width:592px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.1a.png" 
+	alt="MAC Button" style="width:668px;height:75px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT Should only Acknowledge MSDU1 (frame 165).<br> In this case it was represented by a Data frame. The STAUT Should not send an ICMP Echo Response.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1cs.png" 
+	alt="MAC Button" style="float:left;width:592px;height:31px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.1c.png" 
+	alt="MAC Button" style="width:692px;height:122px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should not acknowledge, not send an ICMP Echo Response to this frame.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1dss.png" 
+	alt="MAC Button" style="float:left;width:592px;height:26px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.1ds.png" 
+	alt="MAC Button" style="width:679px;height:168px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should recieve MSDU4 without failure.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part e</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1ess.png" 
+	alt="MAC Button" style="float:left;width:592px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.1es.png" 
+	alt="MAC Button" style="width:666px;height:301px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure Case</u><br>The STAUT should acknowledge and respond to MSDU5 with an ICMP Echo Response frame.<br>It successfully did on the top, but did not a little bit further in the trace.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.3.2 (Skipped For Now)-->
+	<a id="1.3.2"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.3.2 - Aging Function<br> IEEE Std 802.11™-2012 Edition, subclause 10.2.1.12</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Parts a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2ass.png" 
+	alt="MAC Button" style="float:left;width:293px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.2as.png" 
+	alt="MAC Button" style="width:670px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should recieve and respond to broadcast traffic.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Parts b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2ass.png" 
+	alt="MAC Button" style="float:left;width:293px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.2bs.png" 
+	alt="MAC Button" style="width:675px;height:182px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should request it's buffered traffic when directed buffered traffic is sent to the STAUTS AID<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Part c-d</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2ass.png" 
+	alt="MAC Button" style="float:left;width:293px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.2cs.png" 
+	alt="MAC Button" style="width:665px;height:273px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should remain in Power Save mode when there isn't any directed traffic to the STAUTS AID<center></h5>
+
+<!--1.3.3 COMPLETE-->
+	<a id="1.3.3"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>STAUT Base Test 1.3.3 - PS-Poll Processing<br> IEEE Std 802.11™-2012 Edition, Clause 10.2.1, subclauses 10.3 and 8.3.1.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.3 Parts a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.3ass.png" 
+	alt="MAC Button" style="float:left;width:415px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.3.3as.png" 
+	alt="MAC Button" style="width:673px;height:154px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The STAUT should defragment MSDU1 for all fragmentation thresholds and forward the ICMP Echo Response to the TS.<BR>it may be hard to see because everything is represented as a data frame but by looking at the source/destination addresses we can see that the STAUT replied back to the TS<center></h5>
+
+
+	<br>
+
+	
+<!--Back To The Top Link-->
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+</body>
+
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

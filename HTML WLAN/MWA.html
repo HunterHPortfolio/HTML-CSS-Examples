@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<!--Main Header-->
+	<a id="top"></a>
+<header><h1 id="myP" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>WLAN Training: MAC WPA Testing For Access Points (APUT)</center></h1></header>
+	<a id="top"></a>
+<!--Navigation List-->
+	<ul id="menu" ><center>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+		<li><a href="General.html">General Knowledge</a></li>
+		<li><a href="Extra.html">New Hire Information</a></li>
+		<li><a href="Resources.html">Resources</a></li>
+		<li><a href="About.html">About</a></li>
+	</center></ul>  
+<title>MAC WPA AP</title>
+</head>
+
+<body>
+	<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>These are all Visual Representations of what a Perfect Pass Looks Like for MAC Base Testing on an AP!<center></h2>
+	<center><ul style = "max-width:1500px">
+
+	
+
+	
+<!--Links to Jump around the page-->
+<h4 style="font-size: 20px; color:black;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); "><center>-Jump to a Specific Test-<center></h2>
+<center>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa2_1.1.1"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Test 1.1.1 - TKIP Countermeasures</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa1.1.2"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Test 1.1.2 - TKIP Replay Protection</button></a></p>
+	<br><br><center><a href="#x" align="center" title="Not all frames will be in perfect order.&#013;There are various sections shortened on this page to show specifically what to look for.&#013;The Babble frames are the bright yellow frames - these are purely informational (titles basically).&#013;The actual test MSDU/MPDU frame(s) shall be present after the babble frame.&#013;We are looking for how the DUT behaves with the reception of each test frame mostly.&#013;Other tests might require you to look deeper into frames to see specific values to determine if it's a Pass or Fail case&#013(Don't worry - it's not as hard as it looks - it just takes a little practice).&#013;Lastly it's okay to take periodic breaks and Happy MAC Testing!" style="padding:5px;text-align: center;border:2px; border-style:solid; border-color:black;background-color:white;color:#000000;text-decoration:none">Hover Here For Additional Information</a></center></center><br></center></center></center>
+</ul>
+</center>
+<!--MAC WPA APUT Testing Starts-->
+<br>
+<!--Test 1.1.1-->
+	<a id="wpa2_1.1.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border: 3px solid darkred;background-color: white;"><center><strong>Group 1 - Field Checking</strong></center></h2>
+	<a id="wpa1.1.1"></a>
+
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>WPA Test 1.1.1 - TKIP Countermeasures<br> IEEE Std. 802.11-2007, Clause 11.4.2.4 and 11.4.2.3 and WPA for 802.11 version 2.0, Appendix H, Figure 8</strong></center></h2>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part a</strong><center></h2>
+	  <center><img src="Images/MacWPA/1.1.1am.png" 
+	alt="MAC Button" style="float:left;width:420px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:215px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1a.png" 
+	alt="MAC Button" style="width:593px;height:107px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> respond to every transmission of MSDU1 (frame 164)<br> with an Acknowledgement (Frame 165)<br> followed by an ICMP Echo Response (Frame 166)</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part b</strong><center></h2>
+	 <center><img src="Images/MacWPA/1.1.1bm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:17px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1b.png" 
+	alt="MAC Button" style="width:601px;height:348px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> Acknowledge both MPDU2's (frames 189 and 202)followed by not responding with an ICMP Echo Response<br> The APUT <u>Should</u> Disassociate or Deauthenticate in response to the second MPDU2 (Frame 204) with a reason code indicating MIC failure</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part c</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1cm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1c.png" 
+	alt="MAC Button" style="width:605px;height:243px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> Acknowledge both MPDU3's (frames 153 and 263). followed by not responding with an ICMP Echo Response<br> The APUT <u>Should then</u> Disassociate or Deauthenticate in response to the second MSDU3 (Frame 165)</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part d</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1dm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1d.png" 
+	alt="MAC Button" style="width:603px;height:105px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should not</u> respond to MSDU4 (frame 164) at all.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part e</strong><center></h2>
+		<center><img src="Images/MacWPA/1.1.1em.png" 
+	alt="MAC Button" style="float:left;width:538px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1e.png" 
+	alt="MAC Button" style="width:607px;height:285px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> Acknowledge both MPDU5's.<br> The APUT <u>Should Not</u> Disassociate or Deauthenticate.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part f</strong><center></h2>
+			<center><img src="Images/MacWPA/1.1.1fm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1f.png" 
+	alt="MAC Button" style="width:606px;height:301px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> Acknowledge both transmissions of MPDU6 (frame 144)<br> and MPDU3 (frame 157).<br> Upon reception of MPDU3 the APUT should Disassociate or Deauthenticate. (Frame 159)<center></h5>
+	
+<center><ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+	<br>
+	
+<!--Test 1.1.2-->
+	<a id="wpa1.1.2"></a>
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>WPA Test 1.1.2 - TKIP Replay Protection<br> IEEE Std. 802.11-2007, Clause 11.4.2.4 and 11.4.2.3 and WPA for 802.11 version 2.0, Appendix H, Figure 8</strong></center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part a</strong><center></h2>
+	<img src="Images/MacWPA/1.1.2a.png" 
+	alt="MAC Button" style="width:713px;height:257px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a failure case</u><br>The APUT should transmit the first group key with a TSC of 1 or 0.<br> you can find this number in the "TKIP Ext. Initialization Vector" field under IEEE 802.11 Data.<br>As you see here, the TSC is 2, it should be 1 or 0.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part b</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2am.png" 
+	alt="MAC Button" style="float:left;width:538px;height:222px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-650px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2b.png" 
+	alt="MAC Button" style="width:709px;height:377px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should use incrementing TSCs for each ICMP Echo Response transmitted.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part c</strong><center></h2>
+	<img src="Images/MacWPA/1.1.2c.png" 
+	alt="MAC Button" style="width:712px;height:378px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This is similiar to 1.1.2 Part a<br>The APUT should transmit the first Group Key with a TSC of 1 or 0,<br>The Group Key is represented as a Data frame on this trace.<br>The APUT should also increment the TSCs for each transient key and Group Transient Key.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part d</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2dm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:82px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-650px;border:2px;margin-top:-10px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2d.png" 
+	alt="MAC Button" style="width:697px;height:118px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should acknowledge MSDU4 followed by discarding it.<br>The APUT should also reply to MSDU1 (Arp Request) with an ARP Response.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part e</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2em.png" 
+	alt="MAC Button" style="float:left;width:538px;height:119px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-650px;border:2px;margin-top:-10px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2e.png" 
+	alt="MAC Button" style="width:688px;height:165px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should forward an ICMP Echo Response to MSDU5-11. <br>The APUT should then discard MSDU12 after transmitting an ACK for it.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part f</strong><center></h2>
+		<center><img src="Images/MacWPA/1.1.2dm.png" 
+	alt="MAC Button" style="float:left;width:538px;height:82px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-650px;border:2px;margin-top:-10px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2d.png" 
+	alt="MAC Button" style="width:697px;height:118px;border:0;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Test is Informational</u><br>The APUT may send a deauthentication or disassociation in response to the second transmition of MSDU4.<br>in this case the APUT processed the frame and did not deauthenticate or disassociate.<center></h5>
+	<br>
+
+
+	
+	
+<center><ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+	<br>
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

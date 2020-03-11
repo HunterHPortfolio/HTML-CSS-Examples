@@ -1,0 +1,682 @@
+head{
+
+}
+
+textarea[name=foo] {
+    resize: none;
+}
+body {
+    background-color: #95B8C9;
+	color:black;
+	min-width: 1000px;
+    font-family: Segoe UI ;
+	resize: none;
+	overflow: auto;
+	min-width: 1800px;
+    -webkit-font-smoothing: antialiased;
+}
+
+#menucontainer {
+    display:none;
+	
+}
+.menu1 li {
+    transition:all linear 0.15s;
+    color: red;
+    
+}
+.container {
+ width: 1600px;
+ 		   -webkit-box-reflect: below 10px -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.2) 0%, transparent 80%, transparent 100%);
+}
+.wpa2{
+	min-width: 1200px;
+}
+.walk{
+	min-width: 1500px;
+}
+header{
+
+  width: 100%;
+  text-align: center;
+  margin-bottom:0px;
+  font-size: 10px;
+  line-height: 0px;
+  height: 40px;
+  background: #50637F;
+  color: #black;
+  font-family: 'PT Sans', sans-serif;
+  position: center;
+  box-shadow: 10px 8px 40px 20px rgba(0,0,0,0.2);
+ margin-top:-5px;
+
+  border: 2px solid black; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+header.sticky {
+
+  font-size: 24px;
+  line-height: 60px;
+  height: 60px;
+  background:  #404040;
+  text-align: left;
+  padding-left: 20px;
+  
+}
+h1 {
+
+	border-radius: 5px;
+    border-width: 4px;
+	  font-size: 30px;
+    color: black;
+    margin-left: 20px;
+	margin-right: 20px;
+	text-shadow: #7b899d 1px 1px 3px;
+	-webkit-font-smoothing: antialiased;
+	font-family:  1.6em Segoe UI Light;
+}
+h2 {
+	border-style: solid;
+    border-width: 2px;
+    color: black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 15px 15px 15px 15px;
+	margin-top: 0px;
+font-size: 18px;
+	background-color: #768396;
+	    font-family:  1.6em Segoe UI Light;
+}
+h3 {
+	border-style: solid;
+    border-width: 2px;
+    color: black;
+    margin-left: 150px;
+	margin-right: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+		border-radius: 20px 20px 50px 50px;
+		margin-top: 0px;
+	border-color: darkred;
+	background-color:#FFFFFF;
+		
+}
+
+h4 {
+	border-style: solid;
+    border-width: 2px;
+    color: black; background-color: grey;
+    margin-left: 500px;
+	margin-right: 500px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #9FB0C9;
+}
+h5 {
+	border-style: solid;
+    border-width: 1px;
+    color: black;
+    margin-left: 600px;
+	margin-right: 600px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #9FB0C9;
+	font-family: Segoe UI ;
+	font-size: 15px;
+	min-width:400px;
+
+}
+h7 {
+	border-style: solid;
+    border-width: 1px;
+    color: black;
+    margin-left: 800px;
+	margin-right: 800px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #9FB0C9;
+	font-family: Segoe UI ;
+	font-size: 15px;
+}
+ul#menu {
+	min-width: 1400px;
+	border-radius: 20px;
+	padding-bottom: 3px;
+	
+}
+
+h6 {
+	border-style: solid;
+    border-width: 2px;
+    color: black;
+    margin-left: 150px;
+	margin-right: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+		border-radius: 20px 20px 50px 50px;
+		margin-top: 0px;
+	border-color: darkred;
+	background-color:#cccccc;
+		
+}
+
+ul#menu li { 
+	display: inline;
+	padding: 20px;
+background-color: #748CAF;
+	font-weight: bold;
+	
+	font: 1.6em Segoe UI, "Segoe UI Light", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+ul#walk li { 
+	display: block;
+	
+}
+div#body {
+	margin-left: 130px; 
+	margin-right: 130px;
+	
+}
+div#intro {
+	 padding-bottom: 1px;
+	 font-size: 19px;
+}
+ul#links li{
+
+    background-color: #6f6f71;
+	padding: 20px;
+	
+}
+#menu li { 
+display: inline; 
+padding: 20px; 
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    background-color: #748CAF;
+	overflow: hidden;
+		border: 2px solid black;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+li {
+    float: center;
+
+}
+
+li a {
+    color: #000;
+    padding: 14px 16px;
+    text-decoration: none;
+	text-align: center;
+	width: 180px;
+		-webkit-transition: linear 200ms;
+		background-color: #748CAF;
+}
+
+li  a.active {
+    background-color: 2B4162;
+    color: gray;
+	
+}
+li a:hover:not(.active) {
+    background-color: #cce6ff;
+    color: black;
+	
+}
+
+.test {
+    opacity: 0.5;
+	filter: alpha(opacity=50);
+    margin-top: 0px;
+	margin-left: 0px;
+	-webkit-transition: linear 200ms;
+	position: right;
+	 text-align: center;
+
+}
+.test2 {
+    opacity: 0.5;
+	filter: alpha(opacity=50);
+		position: fixed;
+	margin-top: 15px;
+	-webkit-transition: linear 200ms;
+	border: 2px solid black;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"
+
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #b3b3ff;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: solid 1px;
+    cursor: pointer;
+	min-width: 300px;
+	
+
+}
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #ccddff;
+	 min-width: 300px;
+	-webkit-transition: linear 200ms;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+	
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #9999ff;
+    min-width: 298px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-right: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	color: black;
+
+	
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+	
+}
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}
+.dropdown3:hover .dropdown-content3 {
+    display: block;
+}
+.dropdown4:hover .dropdown-content4 {
+    display: block;
+}
+.dropdown5:hover .dropdown-content5 {
+    display: block;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	-webkit-transition: linear 200ms;
+	
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+background-color: #f1f1f1 
+
+}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;
+
+}
+
+
+/* Dropdown Button */
+
+.dropbtn2 {
+    background-color: #ffb3b3;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border:  solid 1px;
+    cursor: pointer;
+	min-width: 300px;
+}
+/* Dropdown button on hover & focus */
+.dropbtn2:hover, .dropbtn2:focus {
+    background-color: #ffe6e6;
+	 min-width: 300px;
+	-webkit-transition: linear 200ms;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: 	 #ffcccc;
+    min-width: 298px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-right: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	color: black;
+
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+		-webkit-transition: linear 200ms;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content2 a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show2{display:block;}
+/* Dropdown Button */
+
+.dropbtn3 {
+    background-color: #99ff66;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border:  solid 1px;
+    cursor: pointer;
+	min-width: 300px;
+}
+/* Dropdown button on hover & focus */
+.dropbtn3:hover, .dropbtn3:focus {
+    background-color: #dff9d2;
+	 min-width: 300px;
+	 	-webkit-transition: linear 200ms;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown3 {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: #8fe963;
+    min-width: 298px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-right: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	color: black;
+
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content3 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+		-webkit-transition: linear 200ms;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content3 a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show3{display:block;}
+
+/* Dropdown Button */
+.dropbtn4 {
+    background-color: #96b9ff;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border:   solid 1px;
+    cursor: pointer;
+	min-width: 300px;
+}
+/* Dropdown button on hover & focus */
+.dropbtn4:hover, .dropbtn4:focus {
+    background-color: #c6ecec;
+	 min-width: 300px;
+	 	-webkit-transition: linear 200ms;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown4 {
+    position: relative;
+    display: inline-block;
+	
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content4 {
+    display: none;
+    position: absolute;
+    background-color:#b0e8e7;
+    min-width: 298px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-right: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	color: black;
+	
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content4 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+		-webkit-transition: linear 200ms;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content4 a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show4{display:block;}
+
+/* Dropdown Button */
+.dropbtn5 {
+    background-color:#ffbb99;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border:   solid 1px;
+    cursor: pointer;
+	min-width: 300px;
+	
+}
+/* Dropdown button on hover & focus */
+.dropbtn5:hover, .dropbtn5:focus {
+    background-color: #ffe6cc;
+	 min-width: 300px;
+	 	-webkit-transition: linear 200ms;
+		
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown5 {
+    position: relative;
+    display: inline-block;
+	
+	
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content5 {
+    display: none;
+    position: absolute;
+    background-color:#ffcc99;
+    min-width: 298px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-right: solid 1px;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	color: black;
+
+
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content5 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+		-webkit-transition: linear 200ms;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content5 a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show5{display:block;}
+
+
+.boxed {
+  border: 1px solid black ;
+  background-color: #9FB0C9;
+      margin-left: 300px;
+	margin-right: 300px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		
+}
+
+.boxed2 {
+  border: .5px solid black ;
+  background-color: #9FB0C9;
+      margin-left: 300px;
+	margin-right: 300px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.boxed3 {
+  border: 1px solid black ;
+  background-color: #9FB0C9;
+      margin-left: 250px;
+	margin-right: 250px;
+		border-radius: 20px 20px 20px 20px;
+	    box-shadow: 5px 20px 16px 5px rgba(0,0,0,0.2);
+		   color: white;
+
+}
+.hover {
+      
+}
+.hover :hover {
+    transition:all linear 0.15s linear;
+      background-color: white;
+	  -webkit-transition: linear 300ms;
+	   -webkit-filter: drop-shadow(1px 1px 1px black);
+
+}
+.hover2 {
+	-webkit-transition:all .5s linear;
+    -webkit-filter: drop-shadow(1px 1px 2px white);
+
+}
+.hover2 :hover {
+    -webkit-transition:all .5s linear;
+
+     -webkit-filter: drop-shadow(2px 5px 2px white);
+
+}
+.hover5 :hover {
+    transition:all linear 0.15s linear;
+      background-color: white;
+	  -webkit-transition: linear 300ms;
+
+
+}
+.wlan{
+	-webkit-transition:all .5s linear;
+    -webkit-filter: drop-shadow(1px 1px 10px white);
+	   -webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.2) 0%, transparent 40%, transparent 100%);
+}
+.boxed4 {
+  border: 1px solid black ;
+  background-color: #9FB0C9;
+       margin-left: 250px;
+	margin-right: 250px;
+	   box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
+	   border-radius: 20px;
+
+}
+.boxed5 {
+  border: 1px solid black ;
+  background-color: #9FB0C9;
+       margin-left: 250px;
+	margin-right: 250px;
+	   box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
+
+}
+.highlightit{
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+-=moz-opacity: 0.5;
+opacity: 0.5;
+}
+
+.highlightit:hover{
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+
+}
+
+#footer {
+position: fixed;
+   left:0px;
+   bottom:2px;
+   height:38px;
+   width:100%;
+font-weight: bold;
+	opacity: 1;
+}
+.footer {
+opacity: 1;
+
+}
+
+
+
+.tooltip .tooltiptext {
+
+opacity:0;
+
+  transition:opacity 0.5s linear;
+    width: 200px;
+    background-color: #95B8C9;
+    color: Darkblue;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px 0;
+    font-style: italic;
+	
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+	
+}
+
+.tooltip:hover .tooltiptext {
+  opacity:1;
+    visibility: visible;
+	
+}
+.walkk {
+ 
+}
+
+.walkk:hover{
+
+	-webkit-transition:all .1s linear;
+}

@@ -1,0 +1,693 @@
+<html>
+<!--Welcome To The MAC BASE AP HTML File
+Hunter Holcombe - UNH-IOL 2016-->
+<head>
+<!--Links and Scripts-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+
+</style>
+<!--Main Header-->
+<header><h1 id="myP" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>WLAN Training: MAC BASE Testing For Access Points (APUT)</center></h1></header>
+	<a id="top"></a>
+<!--Navigation List-->
+	<ul id="menu" ><center>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+		<li><a href="General.html">General Knowledge</a></li>
+		<li><a href="Extra.html">New Hire Information</a></li>
+		<li><a href="Resources.html">Resources</a></li>
+		<li><a href="About.html">About</a></li>
+	</center></ul>  
+<title>MAC Base AP</title>
+</head>
+
+<body>
+	<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>These are all Visual Representations of what a Perfect Pass Looks Like for MAC Base Testing on an AP!<center></h2>
+	<center>
+	
+<ul style = "max-width:1500px">	
+<!--Links to Jump around the page-->
+<h4 style="font-size: 20px; color:black;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); "><center>-Jump to a Specific Group of Tests-<center></h2>
+<center>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.1.1"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 1 - Default Configuration</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.2.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 2 - RTS and Fragmentation</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.3.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 3 - WEP and Powersave</button></a></p>
+	<br><br><center><a href="#x" align="center" title="Not all frames will be in perfect order.&#013;There are various sections shortened on this page to show specifically what to look for.&#013;The Babble frames are the bright yellow frames - these are purely informational (titles basically).&#013;The actual test MSDU/MPDU frame(s) shall be present after the babble frame.&#013;We are looking for how the DUT behaves with the reception of each test frame mostly.&#013;Other tests might require you to look deeper into frames to see specific values to determine if it's a Pass or Fail case&#013(Don't worry - it's not as hard as it looks - it just takes a little practice).&#013;Lastly it's okay to take periodic breaks and Happy MAC Testing!" style="padding:5px;text-align: center;border:2px; border-style:solid; border-color:black;background-color:white;color:#000000;text-decoration:none">Hover Here For Additional Information</a></center></center><br></center></center></center>
+</ul><br>
+
+<!--Intro Paragraphs-->
+
+
+<!--MAC BASE APUT Testing Starts-->
+
+<!--Test 1.1.1 - COMPLETE-->
+	<a id="1.1.1"></a>
+
+
+	<h2 style="border-bottom: 2px solid darkred; border: 3px solid darkred;background-color: white;"><center><strong>Group 1 - Default Configuration</strong></center></h2>
+
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT Base Test 1.1.1 - Frame Processing <br>IEEE Std 802.11™-2012 Edition, Clause 8, Subclause 9.3.2.8, 10.3.5.3, and Annex J.5</strong></center></h2>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;">
+<center><strong>Test 1.1.1 Part a</strong></center></h2>
+	  <center><img src="Images/MacBase/1.1.1am.png" 
+	alt="MAC Button" style="float:left;width:499px;height:46px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:140px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.1a.png" 
+	alt="MAC Button" style="float:center;width:597px;height:75px;border:0; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should not</u> Acknowledge frames MSDU1-MSDU2b as well as continue to operate. <br> As you see here, the APUT doesn't respond to MSDU2a (Frame 289).</center></h5>
+	<!--<center><a href="#1.1.1" title="MSDU1 = A valid ICMP Echo Request to STA-E with a Frame Control field Protocol Version greater than 0&#013;MSDU2a-b = Control frames of reserved subtypes = [0000, 1001], and length = 20-bytes" style="background-color:#abc6d4;color:#000000;text-decoration:none">Hover here for more info</a></center>-->
+	
+			   <center><img src="Images/MacBase/1.1.1bm.png" 
+	alt="MAC Button" style="float:left;width:499px;height:196px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:24px; border-style:solid; border-color:black;"></center>
+	<h2 style="float:center;border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.1b.png" 
+	alt="MAC Button" style="float:center;width:603px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT <u>should</u> Acknowledge frames MSDU3-MSDU11 as well as continue to operate. <br>As you see here, The APUT Acknowledges (on Frame 386) the MSDU4 frame (Frame 385).</center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part c</strong></center></h2>
+				   <center><img src="Images/MacBase/1.1.1cm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.1c.png" 
+	alt="MAC Button" style="float:center;width:648px;height:316px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT should receive frames MSDU12A-MSDU12L without system failure.<br>It is okay for the APUT to Acknowledge these frames. <br>As you see here, the APUT continued to operate as seen by the ICMP Echo Response frame (frame 988).<br></center></h5>
+
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+
+	
+<!--1.1.2 - COMPLETE-->
+	<div class="followMeBar"><h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: white"><center><strong>APUT Base Test 1.1.2 - Null Data Processing <br> IEEE Std 802.11™-2012 Edition, Subclauses 8.2.4.1, 8.3.2, and 9.3.2.2</strong></center></h2></div>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part a</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.2am.png" 
+	alt="MAC Button" style="float:left;width:582px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.2a.png" 
+	alt="MAC Button" style="width:645px;height:435px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT <u>should not</u> Acknowledge frames MSDU1-MSDU3.<br>
+	MSDU1-MSDU3 should be followed by an Acknowledged ICMP Echo request<br> and responded to with an ICMP Echo Response. (frames 340-343). <br>As you see here, MSDU2 (frame 317) is not responded to in any way, <br>along with a successful ICMP Echo Request/Response exchange at the bottom of the trace.</center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.2bm.png" 
+	alt="MAC Button" style="float:left;width:580px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.2b.png" 
+	alt="MAC Button" style="width:644px;height:449px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT <u>should</u> Acknowledge frames MSDU4-MSDU12.<br>
+	MSDU4-MSDU12 should be followed by an Acknowledged ICMP Echo request<br> and responded to with an ICMP Echo Response. (frames 465-468). <br>As you see here, MSDU4 (frame 441) is Acknowledged, <br>along with a successful ICMP Echo Request/Response exchange at the bottom of the trace.</center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.3 - COMPLETE-->
+<!--1.1.3 - COMPLETE-->
+<!--1.1.3 - COMPLETE-->
+	<a id="1.1.3"></a>
+	<div class="followMeBar"><h2 style="border:1px; border-style:solid; border-color:black;background-color: white; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.3 - Deauthentication Processing<br> IEEE Std 802.11™-2012  Edition, Subclauses 10.3, 4.5, 8.4.1.7, 9.3.2.2, and Annex J </strong></center></h2></div>
+	 <center><img src="Images/MacBase/1.1.3am.png" 
+	alt="MAC Button" style="float:left;width:498px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:42px; border-style:solid; border-color:black;"></center>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part a</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.3a.png" 
+	alt="MAC Button" style="width:636px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT <u>should not</u> be able to pass niether Class 2 or 3 traffic after processing MSDU1 (Deauthentication frame 347).<br>As you see here, the APUT Acknowledges MSDU1 on frame 348 (thus processing it),<br> the TS then sends an ICMP Echo request on frame 393, followed by the APUT Deauthenticating on frame 395 due to class 3 traffic being sent.
+	</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part b</strong></center></h2>
+	<center><img src="Images/MacBase/1.1.3bm.png" 
+	alt="MAC Button" style="float:left;width:495px;height:13px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.3b - Processed.png" 
+	alt="MAC Button" style="width:638px;height:150px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center><strong><u>Informative Test</u></strong><br>Once The APUT Recieves MSDU2 (Deauthentication frame 3424),<br>
+	Observe How The APUT Responds to the frame,<br> Does the APUT stop responding, does it process the Frame, or does it completely ignore it?<br> As you see here, This is an example of MSDU2 not being processed.<br> We know this because of the successful ICMP Echo Request/Reply exchange following it.</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Part c</strong></center></h2>
+		<center><img src="Images/MacBase/1.1.3cm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:12px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacBase/1.1.3c.png" 
+	alt="MAC Button" style="width:618px;height:211px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>The APUT <u>should not</u> Acknowledge MSDU3 (Deauthentication frame 3695),<br> it also <u>should not</u> be processed. It is okay for the frame to repeat like the trace above. <br>As you see here, it is not responded to followed by a successful ICMP Echo Request/Reply<br>further indicating that the Deauthentication frame wasn't processed.</center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.4 - COMPLETE-->
+	<a id="1.1.4"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.4 - Open System Authentication Processing<br> IEEE Std 802.11™-2012 Edition, Subclauses 10.3, 4.5, 9.3.2.2, and Annex J </strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part a</strong></center></h2>
+			<center><img src="Images/MacBase/1.1.4am.png" 
+	alt="MAC Button" style="float:left;width:500px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.4a.png" 
+	alt="MAC Button" style="width:570px;height:286px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Once the APUT processes MSDU1 (frame 127), followed by recieving MSDU2 (frame 154)
+	<br>The APUT <u>should</u> respond to MSDU2 with an Authentication Response with an <u>unsuccessful</u> status code (Seen on frame 156),<br> The APUT also <u>should not</u> Associate upon reception of MSDU6 (Association Request frame 185).<br> As you see here, the APUT rejects MSDU6 with a Deauthentication frame (frame 187).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part b</strong><center></h2>
+				<center><img src="Images/MacBase/1.1.4bm.png" 
+	alt="MAC Button" style="float:left;width:500px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacBase/1.1.4b.png" 
+	alt="MAC Button" style="width:589px;height:288px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Once the APUT processes MSDU1 (frame 252), followed by recieving MSDU3 (frame 305)<br>
+	The APUT <u>should</u> respond to MSDU3 with an Authentication Response with an <u>unsuccessful</u> status code (Seen on frame 307)<br> The APUT also <u>should not</u>  Associate upon reception of MSDU6 (Association Request frame 336).<br> As you see here, the APUT rejects MSDU6 with a Deauthentication frame (frame 338).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part c</strong><center></h2>
+				<center><img src="Images/MacBase/1.1.4cm.png" 
+	alt="MAC Button" style="float:left;width:500px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.4c.png" 
+	alt="MAC Button" style="width:588px;height:286px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Once the APUT Recieves MSDU1 (frame 385) followed by recieving MSDU4 (frame 452)<br>
+	The APUT <u>should</u> respond to MSDU4 with an Authentication Response with a <u>successful</u> status code (Seen on frame 454)<br> The APUT also <u>should </u> Associate upon reception of  MSDU6 (frame 484).<br> As you see here, the APUT accepts MSDU6 with an Association Response frame (frame 486).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.4 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.4dm.png" 
+	alt="MAC Button" style="float:left;width:500px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.4d.png" 
+	alt="MAC Button" style="width:589px;height:300px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should not</u> Acknowledge nor process MSDU5 (frame 615).<br> As you see here, the APUT does just that.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.5 COMPLETE-->
+	<a id="1.1.5"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.5 - Association Processing<br>IEEE Std 802.11™-2012 Edition, Subclauses 10.3, 4.5, and 9.3.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.5am.png" 
+	alt="MAC Button" style="float:left;width:493px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5a.png" 
+	alt="MAC Button" style="width:635px;height:302px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU3-MSDU6 (MSDU3 on frame 289) <br>with an Association Response (frame 291). <br>A. If the APUT sends an Association Response with a status code indicating it is unsuccessful, then it should not be able to pass class 3 traffic. Further in the trace there is an ICMP Echo Request, if the APUT Replies on an unsuccessful Association - then it would be a fail.<br>
+	B. If the APUT sends an Association Response indicating it's successful, then there should be a successful ICMP Echo Request/Reply exchange afterwards<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.5bm.png" 
+	alt="MAC Button" style="float:left;width:493px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5b.png" 
+	alt="MAC Button" style="width:623px;height:301px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU7 (frame 611) with an Association Response (frame 613).<br>
+	A. If the APUT sends an Association Response with a status code indicating it is unsuccessful, then it should not be able to pass class 3 traffic. Further in the trace there is an ICMP Echo Request, if the APUT Replies on an unsuccessful Association - then it would be a fail.<br>
+	B. If the APUT sends an Association Response indicating it's successful, then there should be a successful ICMP Echo Request/Reply exchange afterwards<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part c</strong><center></h2>
+			<center><img src="Images/MacBase/1.1.5cm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5c.png" 
+	alt="MAC Button" style="width:624px;height:301px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU8 (frame 677) with an Association Response (frame 679).<br>
+	A. If the APUT sends an Association Response with a status code indicating it is unsuccessful, then it should not be able to pass class 3 traffic. Further in the trace there is an ICMP Echo Request, if the APUT Replies on an unsuccessful Association - then it would be a fail.<br>
+	B. If the APUT sends an Association Response indicating it's successful, then there should be a successful ICMP Echo Request/Reply exchange afterwards<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.5dm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5d.png" 
+	alt="MAC Button" style="width:631px;height:302px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU9 (frame 721) with a successful Association Response. <br>This <u>should</u> be followed by the APUT transmitting an ICMP Echo Response frame to the ICMP Echo Request frame.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part e</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.5em.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5e.png" 
+	alt="MAC Button" style="width:616px;height:136px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should not Acknowledge nor process MSDU10 (frame 792).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.5 Part f</strong><center></h2>
+			<center><img src="Images/MacBase/1.1.5fm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.5f.png" 
+	alt="MAC Button" style="width:615px;height:345px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should respond to MSDU11 (frame 837) with an Association Response containing an unsuccessful status code (frame 839).<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.6 - COMPLETE-->
+	<a id="1.1.6"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.6 - Disassociation Processing<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3, 8.4.1.7, and 9.3.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part a</strong><center></h2>
+				<center><img src="Images/MacBase/1.1.6am.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.6a.png" 
+	alt="MAC Button" style="width:586px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> process MSDU1 (frame 291) followed by <u>not</u> being able to pass Class 3 traffic (ICMP Echo Response frame 346). <br>As you see here, the APUT responds to the ICMP Echo Response frame with a Deathentication frame (frame 348) indicating MSDU1 was successfully processed.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part b</strong><center></h2>
+					<center><img src="Images/MacBase/1.1.6bm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.6b - Not Processed.png" 
+	alt="MAC Button" style="width:599px;height:152px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>Informative Test</u><br>Once The APUT Recieves MSDU2 (frame 3846), <br>Observe How The APUT Responds to the frame,<br> Does the APUT stop responding, does it process the Frame, or does it completely ignore it?<br> As you see here, This is an example of MSDU2 not being processed.<br> We know this because of the successful ICMP Echo Request/Reply exchange following it.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.6 Part c</strong><center></h2>
+						<center><img src="Images/MacBase/1.1.6cm.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.6c.png" 
+	alt="MAC Button" style="width:621px;height:122px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT Should not Acknowledge nor process MSDU3 (frame 5289)<center></h5>
+	
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.7-->
+	<a id="1.1.7"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.7 - Reassociation Processing<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3, 9.3.2.2, and 10.3.5.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7am.png" 
+	alt="MAC Button" style="float:left;width:496px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7a.png" 
+	alt="MAC Button" style="width:648px;height:272px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Trace is a Failure Case</u><br> The APUT should respond to MSDU6 (frame 104) with a reassociation response with a successful status code.<br>As you see here, the TS disassociates (frame 92). MSDU6 is then transmitted (Frame 104)<br> we would normally look for the APUT to reply with a Reassociation Response for it to be a Pass.<br> To verify, it would be followed by an ICMP Echo Request/Reply. In this case the APUT Deauthenticated which means it failed.<br><br><u> Sometimes this is an RTC type of test (all of 1.1.7 in some cases) due to the APUT improperly processing disassociations to begin with (Determined on Test 1.1.6), <br>so a valid pass or fail just can't be given for these.</u><center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7bm.png" 
+	alt="MAC Button" style="float:left;width:481px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7b.png" 
+	alt="MAC Button" style="width:514px;height:421px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Trace is a Failure Case</u><br>The APUT should respond to MSDU7 (frame 173) with a reassociation response containing an unsuccessful status code, followed by not transmitting any class 3 frames after recieving MSDU4.<br>As you see here, the APUT dissassociated prior to the Reassociation Request. Thus Deauthenticating in response to MSDU7<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7cm.png" 
+	alt="MAC Button" style="float:left;width:481px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7c.png" 
+	alt="MAC Button" style="width:627px;height:287px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Trace is a Failure Case</u><br>The APUT should respond to MSDU8 (frame 244) with a reassociation response containing an unsuccessful status code, followed by not transmitting any class 3 frames after recieving MSDU4.<br>As you see here, the APUT responded to MSDU8 with a Deauthentication frame making this case a failure case.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7dm.png" 
+	alt="MAC Button" style="float:left;width:481px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7d.png" 
+	alt="MAC Button" style="width:635px;height:450px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Trace is a Failure Case</u><br>The APUT should respond to MSDU9 (frame 313) with a reassociation response containing an unsuccessful status code, followed by not transmitting any class 3 frames after recieving MSDU4.<br>As you see here, the APUT acknowledges MSDU9 without sending a reassociation frame (unsuccessful status) and further Deauthenticates in response to the ICMP Echo Request (frame 325)<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part e</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.7em.png" 
+	alt="MAC Button" style="float:left;width:481px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7e.png" 
+	alt="MAC Button" style="width:520px;height:451px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT Should not Acknowledge nor process MSDU12 (Reassociation Request frame 401)<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.7 Part f</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.7fm.png" 
+	alt="MAC Button" style="float:left;width:481px;height:57px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.7f.png" 
+	alt="MAC Button" style="width:630px;height:317px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This Trace is a Failure Case</u><br>The APUT should respond to MSDU10-MSDU11 with a Reassociation Response containing a successful status code.<br>As you see here, once again the Reassociation (frame 486) was responded to with a Deathentication frame<center></h5>
+	
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.8 - COMPLETE-->
+	<a id="1.1.8"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.8 - State Variables and Services<br> IEEE Std 802.11™-2012 Edition, Subclause 10.3</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8am.png" 
+	alt="MAC Button" style="float:left;width:430px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.8a.png" 
+	alt="MAC Button" style="width:597px;height:257px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to both MSDU4 (frame 130)<br> and MSDU5 (frame 184) <br>with a Deathentication frame<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.8bm.png" 
+	alt="MAC Button" style="float:left;width:430px;height:43px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.8b.png" 
+	alt="MAC Button" style="width:593px;height:271px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU6-MSDU7 (frame 297)<br> and MSDU9-MSDU16 (frame 438) <br>with a Deathentication frame (frames 299 and 440)<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.8bm.png" 
+	alt="MAC Button" style="float:left;width:430px;height:43px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.8c.png" 
+	alt="MAC Button" style="width:580px;height:166px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU6-MSDU7 (frame 809)<br> and MSDU9-MSDU16<br>with a Deathentication OR Disassociation frame (frame 811).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.8 Part d</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.8dm.png" 
+	alt="MAC Button" style="float:left;width:430px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.8d.png" 
+	alt="MAC Button" style="width:593px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> respond to MSDU8 (frame 4654)<br> with a Probe Response Frame (frame 4656) for all cases of MSDU8.<center></h5>
+	
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.9 - COMPLETE-->
+	<a id="1.1.9"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.9 - Acknowledgement and Duration Field Validation<br> IEEE Std 802.11™-2012 Edition, Subclauses 7.2.1.3, 9.3.2.2, 9.3.2.8, and 9.7</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9am.png" 
+	alt="MAC Button" style="float:left;width:445px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9a.png" 
+	alt="MAC Button" style="width:530px;height:203px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should respond to MSDU1 (frame 100) with an Acknowledgement (Frame 101) with a duration field = 0<br> To see the duration field, click on the Acknowledgement frame,<br> it is located under the IEEE 802.11 Acknowledgement header<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9bm.png" 
+	alt="MAC Button" style="float:left;width:450px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9b.png" 
+	alt="MAC Button" style="width:400px;height:395px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> Acknowledge the first fragment of MSDU2<br>(Frame 130 is the first fragment - 131 is the Acknowledgment) with duration field = to Some Number,<br> The APUT also <u>should</u> Acknowledge the second fragment of MSDU2 <br>(the fully represented fragment is on frame 132, the Acknowledgment for it is frame 134) with duration field = 0 <br>To see the duration field, click on the Acknowledgement frame, it is located under the IEEE 802.11 Acknowledgement header<br><center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9cm.png" 
+	alt="MAC Button" style="float:left;width:451px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9c.png" 
+	alt="MAC Button" style="width:589px;height:164px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> transmit an acknowledgement upon reception of MSDU3 (frame 213).<br> The APUT should also <u>not</u> transmit any acknowledgments upon reception of MSDU4 (frame 228). Here, you see the APUT do just that!<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part d</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.9dm.png" 
+	alt="MAC Button" style="float:left;width:588px;height:40px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9d.png" 
+	alt="MAC Button" style="width:540px;height:239px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>Should</u> respond to MPDU8 (frame 235) with an Acknowledgment<br> containing a duration field = to Some Number not 0.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part e</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.9em.png" 
+	alt="MAC Button" style="float:left;width:588px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9e.png" 
+	alt="MAC Button" style="width:648px;height:77px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should</u> acknowledge MSDU7 (frame 376).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.9 Part f</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.9fm.png" 
+	alt="MAC Button" style="float:left;width:591px;height:136px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.9b.png" 
+	alt="MAC Button" style="width:400px;height:395px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>When a directed frame is fragmented, each fragment should have a calculated duration field,<br> with the exception of the last fragment (I.e. More Fragments bit is not set) which should have a duration field of 0.<br> This part of the test involves looking through the whole trace at data frames.<center></h5>
+	
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.10 - COMPLETE-->
+	<a id="1.1.10"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.10 - Defragmentation<br> IEEE Std 802.11™-2012 Edition, Subclause 9.2.7 and 9.6</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.10 Part a</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.10am.png" 
+	alt="MAC Button" style="float:left;width:588px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.10a.png" 
+	alt="MAC Button" style="width:622px;height:241px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a lot of Fragmented frames with a size ranging from 256-bytes to 1456-bytes,<br> we know it's correctly defragmented when we see MPDU1 (frame 492) that has 1514-bytes in size.<br> The APUT should then respond to MPDU1 with an ICMP Echo Response..<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.11 - COMPLETES-->
+	<a id="1.1.11"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.11 - Information Element Formatting<br> IEEE Std 802.11™-2012 Edition, Subclauses 8.3.3.2, 8.3.3.10, and 8.4.2.14</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.11 Parts a, b, c, and d</strong><center></h2>
+			<center><img src="Images/MacBase/1.1.11am.png" 
+	alt="MAC Button" style="float:left;width:430px;height:88px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.11a.png" 
+	alt="MAC Button" style="width:620px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For all of 1.1.11, The APUT <u>should</u> respond to MSDU1-MSDU6 (Probe Request frames) with Probe Responses.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+
+<!--1.1.12 - COMPLETE-->
+	<a id="1.1.12"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.12 - CTS-to-self Recognition<br> IEEE Std. 802.11-2012, Clauses 8.3.1.3, 9.3.2.11, and 9.8</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.12 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.12am.png" 
+	alt="MAC Button" style="float:left;width:369px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.12a.png" 
+	alt="MAC Button" style="width:628px;height:451px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you should see a "River" of Clear-to-send frames that should be uninterupted.<br> If by chance it is interupted, double check the source to make sure where it came from, if it's from the APUT then it's a fail.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.1.13 - COMPLETE-->
+	<a id="1.1.13"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.1.13 - Duplicate Detection and Recovery<br> IEEE Std 802.11™-2012 Edition, Subclause 9.3.2.10</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.13 Part a</strong><center></h2>
+	<h5>This particular test has a few steps and some detective work, go through it 1 step at a time.</h5>
+		<center><img src="Images/MacBase/1.1.13am.png" 
+	alt="MAC Button" style="float:left;width:588px;height:253px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.13a1.png" 
+	alt="MAC Button" style="width:627px;height:456px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Firstly, we are checking that the APUT transmits frames with Sequence numbers incrimenting by 1 value,<br>I have chosen the Authentication/Association frames (frames 39/53)  to represent this.<br>As you see here, the Sequence number changes from 566 to 567 so it's a Pass!<center></h5>
+	
+	<img src="Images/MacBase/1.1.13a2.png" 
+	alt="MAC Button" style="width:619px;height:398px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, we are checking that the fragmented frames contain the same Sequence number.<br>As you see here, both sequence numbers are the same for fragmented frames.<center></h5>
+	<center><img src="Images/MacBase/1.1.13am.png" 
+	alt="MAC Button" style="float:left;width:588px;height:253px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	
+	<img src="Images/MacBase/1.1.13a3.png" 
+	alt="MAC Button" style="width:585px;height:166px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one is easier to determine, the APUT <u>should</u> transmit an ICMP Echo Response to MSDU1 (frame 130).<br>MSDU1r is a retransmit of MSDU1, the APUT <u>should not</u> transmit an ICMP Echo Response to MSDU1r.<center></h5>
+	<img src="Images/MacBase/1.1.13a4.png" 
+	alt="MAC Button" style="width:632px;height:228px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should acknowledge all MSDU3a, MSDU3b, and MSDU3c. The APUT should then send an ICMP Echo Response to the TS in response to the ICMP Echo Request (frame427). (to which is composed of MPDU3a and MPDU3b)(frame 437)<br> <center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.13 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.1.13am.png" 
+	alt="MAC Button" style="float:left;width:588px;height:253px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:-10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.1.13b.png" 
+	alt="MAC Button" style="width:633px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, we are looking to see if the APUT acknowledges and forwards <u>each</u> MSDU.<br> Additionally, the APUT should use the same sequence numbers for all MPDUs that make up a MSDU,<br> as well as incrementing sequence numbers for all transmitted frames. <center></h5>
+	<br><br>
+
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+	<br>
+
+
+	
+<!--1.2.1 - COMPLETE-->
+	<a id="1.2.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border: 2px solid darkred;background-color: white; "><center><strong>Group 2 - RTS and Fragmentation</strong></center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT Base Test 1.2.1 - Recovery Procedure and Retransmit Limits<br> IEEE Std 802.11™-2012 Edition, Subclause 9.3.4.4</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part a</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.1am.png" 
+	alt="MAC Button" style="float:left;width:459px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.1a.png" 
+	alt="MAC Button" style="width:666px;height:497px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of Request-to-send (RTS) frames<br> in response to MSDU1 (frame 216)<br> the value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<br> Each RTS frame should have the retry bit set to 0<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part b</strong><center></h2>
+			<center><img src="Images/MacBase/1.2.1am.png" 
+	alt="MAC Button" style="float:left;width:459px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.1b.png" 
+	alt="MAC Button" style="width:666px;height:498px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of ICMP Echo Replies in response to MSDU1 (frame 380).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part c</strong><center></h2>
+			<center><img src="Images/MacBase/1.2.1am.png" 
+	alt="MAC Button" style="float:left;width:459px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.1c.png" 
+	alt="MAC Button" style="width:643px;height:405px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of ICMP Echo Replies in response to MSDU1 (frame 574).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1dm.png" 
+	alt="MAC Button" style="float:left;width:459px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.1d.png" 
+	alt="MAC Button" style="width:616px;height:449px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of ICMP Echo Replies in response to MSDU2 (frame 863).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part e</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.1dm.png" 
+	alt="MAC Button" style="float:left;width:459px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.1e.png" 
+	alt="MAC Button" style="width:648px;height:375px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here you will see a bunch of Fragmented Frames in response to MSDU2 (frame 203).<br> The value of the dot11ShortRetryLimit and aLongRetryLimit may not be known,<br> in which case the consistency of the number of retries needs to be checked.<center></h5>
+	
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+
+<!--1.2.2 COMPLETE-->
+	<a id="1.2.2"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.2.2 - RTS/CTS and Directed MPDU Transfer<br> IEEE Std 802.11™-2012 Edition, Subclauses 9.3.2.5, 9.3.2.6, 9.3.5, and 8.3.1</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 part a</strong><center></h2>
+			<center><img src="Images/MacBase/1.2.2am.png" 
+	alt="MAC Button" style="float:left;width:430px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.2a.png" 
+	alt="MAC Button" style="width:619px;height:331px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>There are 3 parts to this:<br>1. The APUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU1 (frame 267)<br>2. The APUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU2 (frame 281)<br>3. The APUT <u>should</u> use RTS/CTS prior to the ICMP Echo Response to MSDU3 (frame 298) - RTS/CTS on frames 296-297.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.2bm.png" 
+	alt="MAC Button" style="float:left;width:430px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.2b.png" 
+	alt="MAC Button" style="width:632px;height:165px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should ONLY</u> use RTS/CTS prior to the first fragment (frame 327) for the ICMP Echo response to MSDU4 (frame 323)<br><center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part c</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.2cm.png" 
+	alt="MAC Button" style="float:left;width:430px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.2b.png" 
+	alt="MAC Button" style="width:632px;height:165px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT <u>should ONLY</u> use RTS/CTS prior to the first fragment (frame 327) for the ICMP Echo response to MSDU8<br>Currently the script is sending MSDU4 instead of MSDU8, This is essentially testing the same thing as 1.2.2 Part b - this is a pass<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part d</strong><center></h2>
+			<center><img src="Images/MacBase/1.2.2dm.png" 
+	alt="MAC Button" style="float:left;width:431px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.2d.png" 
+	alt="MAC Button" style="width:600px;height:318px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This is the same procedure as 1.2.2a - There are 3 parts to this:<br>1. The APUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU5 (frame 139)<br>2. The APUT <u>should not</u> use RTS/CTS prior to the ICMP Echo Response to MSDU6 (frame 153)<br>3. The APUT <u>should</u> use RTS/CTS prior to the ICMP Echo Response to MSDU7 (frame 170) - RTS/CTS on frames 168-169.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.2.3 (Skipped For Now)-->
+	<a id="1.2.3"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.2.3 - Broadcast and Multicast MPDU Transfer<br> IEEE Std 802.11™-2012  Edition, Subclause 9.3.6 </strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part a</strong><center></h2>
+				<center><img src="Images/MacBase/1.2.3am.png" 
+	alt="MAC Button" style="float:left;width:363px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.3a.png" 
+	alt="MAC Button" style="width:643px;height:107px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For MSDU1-9, we should not see any fragmentation or RTS/CTS when forwarding these frames.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3am.png" 
+	alt="MAC Button" style="float:left;width:363px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.3b.png" 
+	alt="MAC Button" style="width:640px;height:167px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For MSDU1-9, the APUT should not use RTS/CTS or fragmentation to forward the response frames. as we see here the TS uses both fragmentation and RTS/CTS procedures to transmit the frame but the APUT does not. This would be a Pass<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3am.png" 
+	alt="MAC Button" style="float:left;width:363px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.3c.png" 
+	alt="MAC Button" style="width:790px;height:345px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Here we are looking for the APUT to Acknowledge the broadcast and multicast frames<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+
+
+<!--1.2.4 COMPLETE-->
+	<a id="1.2.4"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.2.4 - Directed Fragmentation
+	<br>IEEE Std 802.11™-2012 Edition, Subclauses 9.2.7, 9.3.2.6, and 9.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.4 Part a</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.4am.png" 
+	alt="MAC Button" style="float:left;width:517px;height:104px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:600px;margin-left:50px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.4a.png" 
+	alt="MAC Button" style="width:1772px;height:564px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Dont let this one scare you<br>We will be looking into the Fragmented frames for this case (Frame 196, 198, and 200),<br>along with the final fragment/ICMP Echo Reply frame (frame 202).<br>1. first we check the size - the fragmented frames (196, 198, and 200) should be 512-bytes<br>2. we need to check that the fragments correctly set the more fragments bit - the fragmented frames (196, 198, and 200) should be set to 1 while the reply frame (202) should be set to 0.<br>3. The destination address can be found on the trace - it should normally be Xerox_00:00:01 in all cases for fragments and 192.168.1.101 for the reply frame.<br>4. For the sequence number, they should all be the same number.<br>5. For Fragment numbers, the first fragment should start at 0 and then increment by 1.<br><center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.4 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.4am.png" 
+	alt="MAC Button" style="float:left;width:517px;height:104px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:350px;margin-left:50px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.4b.png" 
+	alt="MAC Button" style="width:1256px;height:315px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The only difference from this part and 1.2.4 Part a - is the size of the fragments. They should all be set to 300-bytes instead.<br>It should correctly set the More Fragments bit.<br>Correctly set the Destination.<br>Maintain the same sequence number for all fragments of each MSDU.<br>Finally, begin the fragments at 0 and increment by 1.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+
+<!--1.2.5 COMPLETE-->
+	<a id="1.2.5"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.2.5 - Multirate Support<br> IEEE Std 802.11™-2012 Edition, Subclause 9.7</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.5 Parts a-f</strong><center></h2>
+		<center><img src="Images/MacBase/1.2.5am.png" 
+	alt="MAC Button" style="float:left;width:517px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.5a.png" 
+	alt="MAC Button" style="width:640px;height:355px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This test sounds complicated but is pretty simple, we are just checking that the APUT transmits Control response frames (CTS and ACK frames) at one of the basic rates set in the BSSBasicRateSet at a rate less than or equal to the rate of the previous frame sent.<br><u>For Part a-c</u><br> The Basic Rates = 1 and 2<br>Extended Rates = 5.5 and 11<br><u>For Parts d-f</u><br>Basic Rates = 6, 12, and 24<br>Extended Rates = 9, 18, 36, 48, and 54<br>As you see here, this is part d so we are looking to see if the Data Rate matches any of the rates on the lower table and it does, this is a Pass!
+	<center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+
+<!--1.2.6 (Skipped For Now)-->
+	<a id="1.2.6"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.2.6 - Defragmentation using RTS/CTS<br> IEEE Std 802.11™-2012 Edition, Subclause 9.2.7 and 9.6</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.6 Part a</strong><center></h2><center>
+					<center><img src="Images/MacBase/1.2.6am.png" 
+	alt="MAC Button" style="float:left;width:477px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.2.6a.png" 
+	alt="MAC Button" style="width:645px;height:317px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this test, the APUT is supposed to defragment MSDU1 (frame 149 is showing it defragmented). <br>The APUT should then use the RTS/CTS procedure (frames 151-152)<br> Finally the APUT should forward a ICMP Echo Response to the TS (frame 153).</center></h5>
+
+
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+
+<!--1.3.1 COMPLETE-->
+	<a id="1.3.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred;background-color: white; "><center><strong>Group 3 - WEP and Powersave</strong></center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black;background-color: white; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.3.1 - WEP Decryption Procedure<br> IEEE Std 802.11™-2012 Edition, Clause 11.2.2</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1am.png" 
+	alt="MAC Button" style="float:left;width:610px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.1a.png" 
+	alt="MAC Button" style="width:668px;height:75px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT Should only Acknowledge MSDU1 (frame 165).<br> In this case it was represented by a Data frame (Frame 165). The APUT Should not send an ICMP Echo Response.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.1bm.png" 
+	alt="MAC Button" style="float:left;width:610px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.1b.png" 
+	alt="MAC Button" style="width:657px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT Should only Acknowledge MSDU2 (frame 179).<br> In this case it was represented by a Data frame (Frame 179). The APUT Should not send an ICMP Echo Response.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part c</strong><center></h2>
+		<center><img src="Images/MacBase/1.3.1cm.png" 
+	alt="MAC Button" style="float:left;width:601px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.1c.png" 
+	alt="MAC Button" style="margin-left:10px;width:692px;height:122px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should not acknowledge MSDU3, and not process this frame.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part d</strong><center></h2>
+		<center><img src="Images/MacBase/1.3.1dm.png" 
+	alt="MAC Button" style="float:left;width:596px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.1d.png" 
+	alt="MAC Button" style="width:698px;height:89px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should Acknowledge MSDU4 (frame 234). <br>The APUT should also transmit an ICMP Echo Response (frame 236).<br>The Echo Request/Reply frames are represented as Data frames in this particular trace.<center></h5>
+	<br>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.3.2 (Skipped For Now)-->
+	<a id="1.3.2"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.3.2 - Aging Function<br> IEEE Std 802.11™-2012 Edition, subclause 10.2.1.12</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Parts a-d</strong><center></h2>
+			<center><img src="Images/MacBase/1.3.2am.png" 
+	alt="MAC Button" style="float:left;width:357px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.2a.png" 
+	alt="MAC Button" style="width:662px;height:445px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one actually tells you if it passes! How neat is that?<br>Each part has it's own trace, if the part makes it all the way through without failing (Babble frame) - then it's a Pass.<br>If by chance it Fails on one of the sections (like the above Trace would be considered a Fail for Part a as you can see) then the whole part is a Fail.<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Part e</strong><center></h2>
+				<center><img src="Images/MacBase/1.3.2am.png" 
+	alt="MAC Button" style="float:left;width:357px;height:135px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.2e.png" 
+	alt="MAC Button" style="width:708px;height:286px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one may be confusing because the frame gets discarded, but as long as the script isn't displaying "waiting" multiple times then it should be a Pass.<center></h5>
+
+<!--1.3.3 COMPLETE-->
+	<a id="1.3.3"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.3.3 - PS-Poll Processing<br> IEEE Std 802.11™-2012 Edition, Clause 10.2.1, subclauses 10.3 and 8.3.1.5</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.3 Parts a-d</strong><center></h2>
+				<center><img src="Images/MacBase/1.3.3am.png" 
+	alt="MAC Button" style="float:left;width:381px;height:61px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.3a.png" 
+	alt="MAC Button" style="width:706px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this one, The APUT should either transmit a qued data frame, an ACK followed by a qued data frame, or a null data frame upon recieving each PS-Poll<center></h5>
+
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<!--1.3.4 COMPLETE-->
+	<a id="1.3.4"></a>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;background-color: white; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT Base Test 1.3.4 - Defragmentation using WEP<br> IEEE Std 802.11™-2012 Edition, Clause 11.2.2, subclause 9.2.7 and 9.6</strong><center></h2>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.4 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.4am.png" 
+	alt="MAC Button" style="float:left;width:416px;height:16px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px;margin-top:10px; border-style:solid; border-color:black;"></center><center>
+	<img src="Images/MacBase/1.3.4a.png" 
+	alt="MAC Button" style="width:710px;height:120px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one may look confusing depending on what device you are testing due to being represented as data frames. <br>Frame 1382 is the fragmented frame from the TS (look at the source address)<br> Frame 1384 is the defragmented ICMP Echo Request (MSDU1). <br>Frame 1386 would be the ICMP Echo Reply from the APUT (again, look at the source address).<br>For this test the APUT should defragment MSDU1 (meaning we should see the ICMP Echo Request)<br>and the APUT should also send an ICMP Echo Reply in response to this frame. This is a Pass!<center></h5>
+	<center><center></p>
+	<br>
+
+	
+<!--Back To The Top Link-->
+<ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+</body>
+
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<!--Main Header-->
+<header><h1><center>WLAN Training: Range vs Throughput Setup</center></h1></header>
+
+<!--Navigation List-->
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+<title>RvT Setup</title>
+<!--Body Paragraphs-->
+	</center><br><br>
+	<h2><center>Non-Bridged Mode Instructions<br>(If the DUT can run an iPerf3 Server on its own)</center></h2>
+	<h3 style="border-radius: 40px;background-color: #9eaec7;"><ol>
+		<li>Connect a 4 Spatial Stream (4SS) AP from our Testbed to the lower chamber (This is normally our Netgear R7500)</li>
+		<li>Replace each antanna on the 4SS Testbed AP with the wired antannae located in the lower chamber in order from left to right.</li>
+		<li>Connect a networking (Cat-5) cable to any Ethernet port on the 4SS Testbed AP to the back of lower chamber</li>
+		<li>Connect The Sniffer via ethernet to the lower chamber. The Ethernet port is located on the back of the octoBox</li> 
+		<li>The upper chamber houses the DUT, place it inside</li><li>If the DUT cannot run an iPerf3 server then you would have utilize bridge mode (See "Bridged Mode Instructions Below).<br> If the device can run an iPerf3 server - continue with these instructions.</li><li>From the Sniffer PC - you can configure all of the settings for the 4SS Testbed AP (switching between 2.4GHz/5GHz basically)</li> 
+		<li>Have the DUT associate with the 4SS Testbed AP</li> 
+		<li>Run the iPerf3 server on the DUT (depends on DUT - see iPerf3 commands below)</li>
+		<li>On the Sniffer PC, shift right click in the throughputscript directory (directory) and click "open command windo here).</li>
+		<li>Type in "tclsh name_of_RvT_script" and execute</li>
+		<li>Wait until done</li>
+		<li>Rotate the DUT clockwise and run again</li>
+	</ol></h3><br><br>
+		<h2><center>Bridged Mode Instructions<br>(If the DUT Can't run an iPerf3 Server)</center></h2>
+		<h3 style="border-radius: 40px;background-color: #9eaec7;"><ol>
+		<li>Follow steps 1-5 above</li>
+		<li>For bridged mode, you need just another TS to act as the iPerf3 Server instead of the DUT</li>
+		<li>This additional TS needs to be connected to the upper chamber via Ethernet</li>
+		<li>The DUT needs to be connected via Ethernet as well (to the back of the upper chamber)</li>
+		<li>Navigate the testbed ap to find the bridge mode settings (Advanced>Advanced Setup>Wireless Bridge)</li>
+		<li>Enable bridge mode and set the IP to have a static IP</li>
+		<li>Click on "Setup Bridge Mode Wireless Settings" - In here you can change between 2.4 and 5GHz as well as set the SSID and Password</li>
+		<li>Click on Apply and then apply it again. Make sure you have the right Wireless radio switched on</li>
+		<li>Continue with steps 10-13 above</li>
+		<li>Note: If you are taking it out of Bridge Mode, make sure to set static IP, otherwise you might have to factory reset the AP and try again
+		</ol></h3><br>
+	<br>
+
+	<p><center><strong>OctoBox Setup Image</strong></p>
+<img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"src="Resources/Setups/RvT/Basic octoBox.png" 
+	alt="MAC Button" style="width:313px;height:265px;border:0;">
+
+<img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"style="margin-left: 20px;" src="Resources/Setups/RvT/Basic octoBox not bridge.png" 
+	alt="MAC Button" style="width:313px;height:265px;border:0;">
+	
+<p><center><strong>Baseline Setup Image</strong></p>
+<img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"src="Resources/Setups/RvT/Basic Chamber.png" 
+	alt="MAC Button" style="width:597px;height:328px;border:0;">
+	
+	<img style="margin-left: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" src="Resources/Setups/RvT/Basic Chamber not bridge.png" 
+	alt="MAC Button" style="width:736px;height:354px;border:0;">
+	</center>
+
+		<br>	<br>
+	<p><strong>Basic iPerf3 commands:</strong></p>
+	<h5>To start a server: "-s -p 5201"<br>To Start a Client: "-c [IP of Server] -p 5201"<br>To view additional parameters please see iperf documentation<br><a href="https://iperf.fr/iperf-doc.php">iPerf Documentation/Command List</a></h5>
+	<br>
+	<p><strong>Notes:</strong></p>
+	<h5>There is a file parser script so that the results can be displayed in a list rather then what iPerf displays. To run this all you have to do is move the script into the folder you are trying to parse, open CMD, type in tclsh into command prompt again and it will automatically parse it</h5>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

@@ -1,0 +1,560 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+#menu li { 
+display: inline; 
+padding: 20px; 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    background-color: #6f6f71;
+	overflow: hidden;
+		border: 2px solid black;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+li {
+    float: center;
+ 
+}
+
+li a {
+    color: #000;
+    padding: 14px 16px;
+    text-decoration: none;
+	text-align: center;
+	width: 180px;
+		-webkit-transition: linear 200ms;
+}
+
+li a.active {
+    background-color: gray;
+    color: gray;
+}
+
+li a:hover:not(.active) {
+    background-color: #cce6ff;
+    color: black;
+
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:18.0pt;line-height:107%'>Abgn Interop for STAUT (For Newbies/Laymen)</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:16.0pt;line-height:107%'>BASIC SETUP</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;line-height:107%'>(Needs to be updated for tests 1.6,
+1.7, and 1.8)</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;line-height:107%'>(1.6 and 1.7 has info written, 1.8
+does not)</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Physical Setup</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Set
+up 6 total AP’s ((case by case) if testing 2 devices, just need 3 AP’s (timing))
+to power supply </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Connect
+all AP’s with Ethernet, if able (connected to Switch)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Connect
+sniffer to switch via Ethernet</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Sometimes
+STAUT needs to be connected to laptop (bridged) in order to work (dev devices)</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ensure
+your mobile device’s wireless is in airplane mode (to produce more accurate
+results in case mobile tries to be another entity during testing (good
+practice))</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Folder Setup</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Find
+the Folders Template for the abgn Interop folders (sidebar in window explorer)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Make
+sure the .txt for STAUT is included in directory</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Copy
+everything into correct vendor/device directory (or create new directory) (sidebar)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Program Setup</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+OmniPeek, move it over to right monitor, make sure it’s on Sniffer profile</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+.txt from the copied template in Notepad++, place in middle</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+IOL Ping Tool (located on desktop), place far left</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Open
+CMD to run a basic ping to verify connected to device</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'>A.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Command:
+ping -t (IP address of DUT), observe that it goes through</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'>B.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>If
+Ping doesn’t go through, you probably did something wrong (setup wise)</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.75in'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>To Test Most Tests:
+(Pass/Fail: 1.1, 1.2, 1.3, 1.4, 1.9 and Informational: 1.10, 1.11)</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>(For 1.2, 1.5,
+1.6, 1.7, 1.9 see “Test Specific” below for addition information)</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Configure
+all AP’s to the right settings (Security, Short Guard on/off, etc.), Make Sure
+It’s Saved</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Most
+of these tests can be configured through AP GUI</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Conduct
+Open Security Tests in Order: 1.1, 1.10, 1.11, 1.9 (see “Test Specific” for 1.9).
+</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Have
+1 AP on at a time</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Start
+OmniPeek and observe 4-way handshake (Auth/Association/Keys/etc.)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>CMD
+Ping DUT IP to verify connected</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Stop
+OmniPeek</p>
+
+<p class=MsoListParagraphCxSpMiddle>-----------------------------------------------------------------------------------------------------------------</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ensure
+IOL Ping is on right test (1.1…etc.) + runs (5 runs if device is good, 10 if
+the device is meh)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Start
+OmniPeek</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Start
+IOL ping tool</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Stop
+OmniPeek after 1<sup>st</sup> run finished (observe runs at bottom of Ping
+Tool)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Save
+.pkt file to appropriate directory “APDevice_pass/fail.pkt”</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Let
+IOL ping tool run/finish</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Copy
+results into Notepad++ (Ping Tool Will Display results)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'>A.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ping
+loss &gt; 5% = FAIL</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'>B.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Timeouts
+&gt; 5   = FAIL</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'>C.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>If a
+test results in a FAIL, retest multiple times to see if it’s consistent</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Move
+to WPA2 Tests in Order: 1.1, 1.10, 1.11, 1.3, 1.4, 1.2 (see “Test Specific”),
+1.9 (ran the same way as Open)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ensure
+that the right security type is configured: AES, TKIP, etc.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Then WEP Tests: 1.1 Only</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>11.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Finally, WPA Tests:
+1.1 Only</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.75in'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:18.0pt;line-height:107%'>Test Specific</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.9: Failover</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Have
+1 AP on (Make Sure all APs are switched back to default (20/40 MHz etc.))</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Have
+CMD open, run Ping -t (DUT IP) continuously</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Run
+OmniPeek continuously through all tests</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Have
+device associate to first AP</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Turn
+on 2<sup>nd</sup> AP</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Wait
+for 2<sup>nd</sup> AP to boot (look at destination address in OmniPeek for
+abundant changes to know)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Shut
+off 1<sup>st</sup> AP</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Results
+are for 2<sup>nd</sup> AP, count how many pings are missed</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Go
+back to Step 1 until every AP has a result</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Stop OmniPeek, save as
+“device1_device2_device3_pass/fail.pkt” in order ran, when finished</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>11.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Only needs to be ran
+for Open and WPA2-PSK AES Security</p>
+
+<p class=MsoListParagraphCxSpLast>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.2: Spatial
+Streams</b></p>
+
+<p class=MsoListParagraphCxSpFirst align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>To
+determine how many spatial streams a device has, look at the Probe Request
+Frame</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Under
+MCS you will see specific data to determine how many streams the device has</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+test is ran just like all the other tests</p>
+
+<p class=MsoListParagraphCxSpLast align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:18.0pt;line-height:107%'>Test Specific (Continued)</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.3 + 1.4: Short
+Guard Interval + Channel Width</b></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Configure this in AP GUI if able</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.5: Legacy
+Coexistence (pass/fail) </b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Use
+the Laptop labeled Dawnstar</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Password
+might be “password” (need to update this just in case)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Have
+IOL Ping open</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+is ran very similar to the other tests, however, now you need to reconfigure
+IOL Ping</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Top
+left you should see “STA2”, input IP of Dawnstar there</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Might
+have to configure the network, in network settings you should be able to find
+11n, disable  that and you should also be able to enable abg in the same menu</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Might
+be a possibility you need to set static IP, it’s in IPv4 properties (first
+address)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ensure
+everything is connected</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Start
+OmniPeek</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Start IOL ping</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>11.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Stop OmniPeek after 1
+run and save as APName_pass/fail.pkt</p>
+
+<p class=MsoListParagraphCxSpMiddle>&nbsp;</p>
+
+<p class=MsoListParagraphCxSpLast>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.6: A-MPDU/BA</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+one is tricky and as I write it I am somewhat unsure; this is what I know</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>When
+OmniPeek is running, if you see BA (Block Acknowledgement), then it has support</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Only
+run the IOL ping 1 time (sends large packets)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>If
+OmniPeek is showing frames that say Frags, it’s working</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Might
+be a way to determine support by looking at probe req frame (there is, find it)</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>IOL
+Ping Tool is used as well, like a basic test</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>1.7: A-MSDU</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>This
+one is a little trickier for me right now</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>There
+is a way to see the MSDU when opening up a packet, its somewhere in the
+parameters</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>IOL
+Ping Tool is used</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Note:
+This test is not regularly supported</p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'>1.8:
+Packet Error Rate</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Terms When Testing
+and Through This Guide</b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Switch:
+A device that connects other devices to network (“hub”), series of Cat5 inputs</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>AP:
+Access Point (router)</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>n/s
+– not supported (when a DUT/AP doesn’t support that part of the test) </p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Most
+Terms should be basic knowledge, if not, Google is your best friend!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Linux/Ubuntu
+Terminal Commands</b></p>
+
+<p class=MsoNormal align=center style='text-align:center'>(learn them - could
+be very helpful in future)</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ifconfig
+: check network status</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ls
+: list files in current directory</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cd
+.. : up one directory</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Cd
+&lt;flie&gt; : go to that directory</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Ifconfig
+wlan0 &lt;IP address&gt; : set static IP</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Wpa_supplicant
+-dd -B -Dnl80211 -I wlan0 -c &lt;config file&gt; : connect device</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Killall
+wpa_supplicant : disconnect device</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Hunter Holcombe - UNH IOL</p>
+
+</div>
+
+</body>
+
+</html>

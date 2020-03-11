@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<!--Main Header-->
+	<a id="top"></a>
+<header><h1><center>WLAN Training: MAC WPA2 Testing For Access Points (APUT)</center></h1></header>
+
+<!--Navigation List-->
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+
+<!--Intro Paragraphs-->
+
+	<h3 style=" color:black; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>These are all Visual Representations of what a Perfect Pass Looks Like for MAC WPA2 Testing on an AP!<center></h2>
+
+	<title>MAC WPA2 AP</title>
+<center><ul style = "max-width:1500px">	
+<!--Links to Jump around the page-->
+<h4 style="font-size: 20px; color:black;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); "><center>-Jump to a Specific Group of Tests-<center></h2>
+<center>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa2_1.1.1"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 1 - CCMP Encapsulation</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa2_2.3.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 2 - CCMP Header Format</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa2_1.3.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 3 - EAPoL-Key Reception</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#wpa2_1.4.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Group 4 - EAPoL-Key Transmission</button></a></p>
+	<br><br><center><a href="#x" align="center" title="Not all frames will be in perfect order.&#013;There are various sections shortened on this page to show specifically what to look for.&#013;The Babble frames are the bright yellow frames - these are purely informational (titles basically).&#013;The actual test MSDU/MPDU frame(s) shall be present after the babble frame.&#013;We are looking for how the DUT behaves with the reception of each test frame mostly.&#013;Other tests might require you to look deeper into frames to see specific values to determine if it's a Pass or Fail case&#013(Don't worry - it's not as hard as it looks - it just takes a little practice).&#013;Lastly it's okay to take periodic breaks and Happy MAC Testing!" style="padding:5px;text-align: center;border:2px; border-style:solid; border-color:black;background-color:white;color:#000000;text-decoration:none">Hover Here For Additional Information</a></center></center><br></center></center></center>
+</ul><br>
+</center></center>
+</div>
+<!--MAC WPA APUT Testing Starts-->
+
+<a id="wpa2_1.1.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border: 3px solid darkred;background-color: white;"><center><strong>Group 1 - CCMP Encapsulation</strong></center></h2>
+
+
+
+<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.1.1 - CCMP MIC Verification <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2 and 11.4.3.3</strong></center></h2>
+	
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part a-e</strong></center></h2>
+	 <center><img src="Images/MacBase/1.1.1aa.png" 
+	alt="MAC Button" style="float:left;width:389px;height:113px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<center><img src="Images/MacWPA2/1.1.1a.png" 
+	alt="MAC Button" style="width:800px;height:402px;border:0; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);border:2px; border-style:solid; border-color:black;"></center>
+	<h5><center>This test is actually quite simple, if the APUT was unable to do any of parts listed, the Ping would not able to be to be decrypted or responded to.<br>Therefore, we just need to check that the APUT responds to encrypted Pings as well as containing the eight octets of CCMP information.<br>Same for all parts a-e.</center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+
+<a id="wpa2_1.2.1"></a>
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;background-color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>APUT WPA2 Test 1.1.2 - CCMP Header Format <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2 and 11.4.3.3</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.2aa.png" 
+	alt="MAC Button" style="float:left;width:368px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:180px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.1.2a.png" 
+	alt="MAC Button" style="width:769px;height:314px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this one we are just seeing if it adds the 8 bytes for the CCMP header, all we have to check for is that MSDU1-MSDU3 contain the CCMP header<center></h5>	
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Parts b and c</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.2aa.png" 
+	alt="MAC Button" style="float:left;width:368px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:170px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.1.2b.png" 
+	alt="MAC Button" style="width:802px;height:308px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Part b<br> This requires you to go a little deeper into the ICMP Echo Replies for MSDU1-MSDU3.<br>Basically, we just need to check that the APUT sets the Ext IV bit to 1 in each Ping reply.<br>If you highlight the CCMP header, it shows you the octets within the frame.<br>The Key IV is in the fourth octet (highlighted in red).<br>This value (20) is in hex but if you were to convert it to binary, it would be 0010 0000, <br>the Key IV is the 6th bit starting from the right, we clearly see it set to 1! If this value is 20 then this is a Pass<center></h5>
+	<h5><center>Part c<br> since we are looking in the same exact place as b, I have grouped these two cases together <br>the reserved bits are contained in the fourth octet as well, for this to pass - the first 5 bits in the above value (0010 0000) should be set to 0. Both cases are a pass if the 3rd and fourth octets equal: 00 20.<center></h5>
+	
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.2aa.png" 
+	alt="MAC Button" style="float:left;width:368px;height:45px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:200px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.1.2d.png" 
+	alt="MAC Button" style="width:743px;height:429px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, we just need to check that the Packet Number for each MPDU transmitted is incrimented.<center></h5>
+	<p style="border:1px; border-style:solid; border-color:black; padding: 0em;"></p>
+	
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.1.3 - CCMP Encryption Verification <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2 and 11.4.3.3</strong></center></h2>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.3 Parts a-d</strong><center></h2>
+	<center><img src="Images/MacBase/1.1.3aa.png" 
+	alt="MAC Button" style="float:left;width:407px;height:56px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:100px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.1.3a.png" 
+	alt="MAC Button" style="width:806px;height:105px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This one is pretty easy, as long as the APUT responds to each frame it means it's able to decrypt the frames.<center></h5>
+	
+<ul>
+		<center><p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+<a id="wpa2_2.3.1"></a>
+<h2 style="border:2px; border-style:solid; border-color:darkred; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>Group 2 - CCMP Decapsulation</strong></center></h2>
+
+
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.2.1 - CCMP MIC Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2, 11.4.3.3, and 11.4.3.4.3</strong></center></h2>
+		
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.1 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.1aa.png" 
+	alt="MAC Button" style="float:left;width:517px;height:100px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:10px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.1a.png" 
+	alt="MAC Button" style="width:801px;height:92px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should discard MPDUs with invalid MICs: MSDU1, MSDU2, and MSDU4<center></h5>
+		
+<!--1.2.2 SKIPPED-->
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.2.2 - CCMP Header Processing<br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2 and 11.4.3.3</strong></center></h2>
+		
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2aa.png" 
+	alt="MAC Button" style="float:left;width:535px;height:42px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:60px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.2a.png" 
+	alt="MAC Button" style="width:673px;height:106px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should ignore reserved bits (b0-b5) of the 4th octet and all bits of the 3rd octet in the CCMP header<br>we can see that this is a pass because the APUT ignored and successfully transmitted an ICMP Echo Reply to MSDU1 (frame 181)<center></h5>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2aa.png" 
+	alt="MAC Button" style="float:left;width:535px;height:42px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:60px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.2b.png" 
+	alt="MAC Button" style="width:665px;height:106px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure Case</u><br>The APUT should discard CCMP encrypted frames with the Extended IV bit set to 0 (data frame 197).<br>It is ok for the APUT to Acknowledge this frame but here we can see the APUT sent an ICMP Echo Reply to it.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.2 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.2aa.png" 
+	alt="MAC Button" style="float:left;width:535px;height:42px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:60px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.2c.png" 
+	alt="MAC Button" style="width:651px;height:76px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This case is Informational</u><br>The APUT may or may not discard any frame containing an invalid Key ID.<br>in this case, the frame (frame 213) is acknowledged and then discarded<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.2.3 - CCMP Decryption Verification <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.4</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3aa.png" 
+	alt="MAC Button" style="float:left;width:346px;height:58px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:180px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.3a.png" 
+	alt="MAC Button" style="width:797px;height:91px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, the APUT should be able to decrypt, and respond to each frame MSDU1-MSDU4. <br>As you see here the APUT does just that.<center></h5>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3ab.png" 
+	alt="MAC Button" style="float:left;width:514px;height:25px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:10px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.3b.png" 
+	alt="MAC Button" style="width:806px;height:75px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, the APUT should not be able to decrypt or respond to MSDU5.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.3 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.3ac.png" 
+	alt="MAC Button" style="float:left;width:528px;height:158px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:10px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.3c.png" 
+	alt="MAC Button" style="width:788px;height:107px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should behave exactly like 1.2.3 Part b, frames MSDU6-MSDU11 should be discarded as well<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.2.4 - CCMP PN Replay Protection <br>IEEE Std 802.11™-2012 Edition, Subclause 11.4.3.2 and 11.4.3.3</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.4 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.4aa.png" 
+	alt="MAC Button" style="float:left;width:461px;height:114px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:1px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.4a.png" 
+	alt="MAC Button" style="width:1030px;height:419px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>We need to make sure that for MSDU1, MSDU3, and MSDU5 the Packet Number (located in the CCMP Ext. Vector field) is incrimented ONLY for these frames while MSDU2 and MSDU4 are not  responded to and/or effect the PN count for the aformentioned MSDUs.<br>These frames are represented as data frames in this particular case but normally<br> it would be represented as Ping Requests/Responses<center></h5>
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.2.4 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.2.4ab.png" 
+	alt="MAC Button" style="float:left;width:535px;height:218px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:10px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.2.4b.png" 
+	alt="MAC Button" style="width:764px;height:420px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a failure case</u><br>The APUT is supposed to detect replayed frames and discard MSDUs whose constituent MPDU PN value isn't sequential (MSDU7, MSDU10, MSDU13, MSDU16).<br>In this case, the PN for the first ICMP Echo Request ends with 56 followed by an ICMP Echo Request whose PN ends with 10057.<br>since the APUT responded to MSDU8 and MSDU9(with non sequential PN values) this is a fail<center></h5>
+
+<ul>
+		<center><p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+
+<a id="wpa2_1.3.1"></a>
+
+<h2 style="border:2px; border-style:solid; border-color:darkred; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>Group 3 - EAPoL-Key Reception</strong></center></h2>
+	
+
+
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.1 - Descriptor Type Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part a</strong><center></h2>
+	<center>
+	<img src="Images/MacWPA2/1.3.1a.png" 
+	alt="MAC Button" style="width:796px;height:197px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part to Pass, we just need to make sure the 4-way handshake goes through successfully<center></h5>
+<!--1.3.1b SKIPPED-->	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.1 Part b</strong><center></h2>
+		<center><img src="Images/MacBase/1.3.1aa.png" 
+	alt="MAC Button" style="float:left;width:417px;height:89px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-400px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.1b.png" 
+	alt="MAC Button" style="width:660px;height:182px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a failure case</u><br>The APUT should silently discard invalid EAPoL-Key frames<br>As you see here, The APUT acknowledges MSDU1 (frame 196) which makes it a fail.<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.2 - Key Information Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2aa.png" 
+	alt="MAC Button" style="float:left;width:514px;height:147px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.2a.png" 
+	alt="MAC Button" style="width:811px;height:258px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For MSDU1-MSDU10, the APUT should successfully complete the 4-way handshake (thus ignoring the reserved bits)<br>Note: MSDU3 and MSDU8 contain bit 13, which is no longer reserved.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2ab.png" 
+	alt="MAC Button" style="float:left;width:477px;height:176px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.2b.png" 
+	alt="MAC Button" style="width:807px;height:183px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>The APUT should silently discard all EAPoL-Key frames containing invalid Key Descriptor Versions (MSDU11-MSDU22), the APUT should not be able to successfully complete the 4-way handshake. <center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.2 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.2ac.png" 
+	alt="MAC Button" style="float:left;width:353px;height:14px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.2c.png" 
+	alt="MAC Button" style="width:813px;height:74px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should silently discard MSDU23<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.3 - Key Length Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+<!--1.3.3 SKIPPED-->
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.3 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.3aa.png" 
+	alt="MAC Button" style="float:left;width:426px;height:71px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.3a.png" 
+	alt="MAC Button" style="width:664px;height:286px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>The APUT should silently discard MSDU1-MSDU5 <br>As you see here, the APUT acknowledges MSDU1 (frame 215) and even completes the 4-way handshake which is a fail.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.3 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.3ab.png" 
+	alt="MAC Button" style="float:left;width:419px;height:73px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-500px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.3b.png" 
+	alt="MAC Button" style="width:667px;height:271px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>The APUT should silently discard MSDU6-MSDU10 <br>As you see here, the APUT acknowledges MSDU7 (frame 1785) which is a fail.<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.4 - Key Nonce Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.4 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.4aa.png" 
+	alt="MAC Button" style="float:left;width:537px;height:26px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.4a.png" 
+	alt="MAC Button" style="width:672px;height:137px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a failure case</u><br>The APUT should silently discard MSDU1. In this case, the APUT acknowledged MSDU1 (frame 357) which means this is a fail.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.4 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.4ab.png" 
+	alt="MAC Button" style="float:left;width:537px;height:28px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.4b.png" 
+	alt="MAC Button" style="width:660px;height:298px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should not successfully complete the 4-way handshake<br>As you see here the APUT didn't process MSDU2 (frame 608 and 624). Seeing that the TS retransmitted EAPoL-Key #3 we can tell it wasn't successful<br>You can also determine this by an unsuccessful the Echo response/reply afterwards.<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.5 - Key Replay Counter Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, 11.6.6.5, and 11.6.5 (informative) and and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.5 Part a and b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.5aa.png" 
+	alt="MAC Button" style="float:left;width:407px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.5a.png" 
+	alt="MAC Button" style="width:781px;height:631px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>There's 2 parts to this trace<br>Part a - the APUT should recieve MSDU1 without the failing<br>Part b - the APUT should not successfully complete the 4-way handshake upon reception of MSDU2 - this might be tricky but a little bit further down the trace a Ping request is sent and the APUT doesn't respond meaning it didn't successfully complete the 4-way handshake<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.6 - EAPoL-Key IV Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.6 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.6aa.png" 
+	alt="MAC Button" style="float:left;width:545px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.6a.png" 
+	alt="MAC Button" style="width:779px;height:180px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>The APUT should silently discard MSDU1 and MSDU2<br>if the APUT only sends an Acknowledgment it would still fail due to it not being silent<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.7 - Key RSC Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.7 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.7aa.png" 
+	alt="MAC Button" style="float:left;width:404px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.7a.png" 
+	alt="MAC Button" style="width:787px;height:256px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>MSDU1 and MSDU2 should be silently discarded<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.8 - Reserved Octets Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.8 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.8aa.png" 
+	alt="MAC Button" style="float:left;width:498px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.8a.png" 
+	alt="MAC Button" style="width:790px;height:257px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>This test we are checking that the APUT ignores reserved bits within EAPoL-Key frames<br>We just need to check that the APUT successfully completes the 4-way hadshake for MSDU1 and MSDU2<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.9 - Key MIC Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.9 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.9aa.png" 
+	alt="MAC Button" style="float:left;width:481px;height59px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.9a.png" 
+	alt="MAC Button" style="width:778px;height:166px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure Case</u><br>The APUT should silently discard MSDU1-MSDU4<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.10 - Key Data Length Field Processing <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.10 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.10aa.png" 
+	alt="MAC Button" style="float:left;width:518px;height:44px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.10a.png" 
+	alt="MAC Button" style="width:809px;height:391px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should recieve MSDU1 and MSDU2 without failure<br>it doesn't neccessarily need to complete the 4-way handshake<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.11 - Key Data Field Processing (Pairwise Message 2) <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.11 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.11aa.png" 
+	alt="MAC Button" style="float:left;width:546px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.11a.png" 
+	alt="MAC Button" style="width:782px;height:273px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>For this part, the APUT just needs to ignore any IEs that are unkown (MSDU1)<br><center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.11 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.11ab.png" 
+	alt="MAC Button" style="float:left;width:532px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.11b.png" 
+	alt="MAC Button" style="width:790px;height:257px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Similiar to 1.3.11a<br>The APUT just needs to ignore any pad bytes appended to an Encryped Key Data field (MSDU2)<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.11 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.11ac.png" 
+	alt="MAC Button" style="float:left;width:530px;height:86px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-599px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.11c.png" 
+	alt="MAC Button" style="width:795px;height:227px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should terminate the association upon reception of any frame that has an RSN IE field that doesn't bitwise match the RSN IE contained in the association or reassociation request frame prior (MSDU3-MSDU6).<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.3.12 - Key Data Field Processing (Pairwise Message 4) <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.12 Part a</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.12aa.png" 
+	alt="MAC Button" style="float:left;width:398px;height:13px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-599px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.12a.png" 
+	alt="MAC Button" style="width:769px;height:360px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should accept EAPoL-Key frames with empty data fields<br>As you see here, the APUT accepts MSDU1 (frame 167)<br>we can verify that the 4-way handshake was successful by looking at pings that follow the Authentication.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.12 Part b</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.12ab.png" 
+	alt="MAC Button" style="float:left;width:521px;height:27px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-599px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.12b.png" 
+	alt="MAC Button" style="width:800px;height:240px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>The APUT should recieve MSDU2 without failure<br>pretty vague but as long as the APUT continues to broadcast then it's a pass.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.3.12 Part c</strong><center></h2>
+	<center><img src="Images/MacBase/1.3.12ac.png" 
+	alt="MAC Button" style="float:left;width:425px;height:30px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-599px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA2/1.3.12c.png" 
+	alt="MAC Button" style="width:807px;height:467px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure Case</u><br>The APUT should ignore any IEs or KDEs that are uknown<br>As you see here, the APUT does not successfully ignore it, we can see that the APUT retries the authentication by re-sending Key #3 signifying that MSDU3 (frame 568 and 583)  was not successfully processed<center></h5>
+<ul>
+		<center><p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+<a id="wpa2_1.4.1"></a>
+
+<h2 style="border:2px; border-style:solid; border-color:darkred; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>Group 4 - EAPoL-Key Transmission</strong></center></h2>
+
+
+<h2><u>For all of Group 4:</u><br> The Traces Captured in previous groups are used to determine the behavior of the APUT  - we typically do not capture any traces specifically for Group 4</h2>
+
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.1 - Descriptor Type Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+		
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.1 Part a</strong><center></h2>
+	
+	<img src="Images/MacWPA2/1.4.1a.png" 
+	alt="MAC Button" style="width:792px;height:439px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace taken from test 1.3.1<br> All you have to do is find a 4-way handshake containing an EAPoL-Key transmitted by the APUT with a Descriptor Type = 2. This is a Pass<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.2 - Key Information Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+			
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.2 Part a, b, and c</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.2a.png" 
+	alt="MAC Button" style="width:1033px;height:527px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.2<br>This one seems a little complicated so we will take it step by step<br>Part a: is just looking for the Key Descriptor Version set to 2, these are outlined in red<br>Part b: is asking for different fields to be set to 1 - For EAPoL-Key 1, these fields are outlined in black. For EAPoL-Key 3, these fields are outlined in blue.<br>For Part c: all other fields not outlined in anything under Key Information should be set to 0<center></h5>
+
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.3 - Key Length Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.3 Part a</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.3a.png" 
+	alt="MAC Button" style="width:810px;height:421px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.3<br>All you have to do for this one is open up an EAPoL-Key Message 1 and 3 and check to see if the Key Length is set to 16 shown above<center></h5>
+			
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.4 - Key Replay Counter Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+			
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.4 Part a and b</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.4a.png" 
+	alt="MAC Button" style="width:787px;height:350px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.4<br>For Part a: Find a an EAPoL-Key Message 1, open it up, under 802.1X Authentication you can find the Replay Counter. It should be set to 0 (initialized at 0)<br> for part b: open up the successive EAPoL-Key frame Message 3, it should be incrimented by 1<center></h5>
+	
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.5 - Key Nonce Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, 11.6.6.5, and 11.6.5 (Informative) and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.5 Part a and b</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.5a.png" 
+	alt="MAC Button" style="width:800px;height:441px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.5<br>For Part a: open up an EAPoL-Key Message 1 and locate the Nonce field, this should be a pretty random number<br>For part b: open up an EAPoL-Key Message 3 and locate the Nonce field, it should be the same as the EAPoL-Key Message 1<center></h5>
+	
+			
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.6 - Key IV Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+				
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.6 Part a</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.6a.png" 
+	alt="MAC Button" style="width:790px;height:432px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.6<br>The EAPoL-Key IV field should have a value 0 in both EAPoL Key Message 1 and 3<center></h5>
+	
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.7 - Key RSC Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.7 Parts a and b</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.7a.png" 
+	alt="MAC Button" style="width:762px;height:708px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Taken from trace 1.3.7<br>For part a, all we need to check is that the EAPoL-Key Message 1 frame contains a 0 RSC value.<br>for part b we can see that the RSC is set to the current value of the previous TK (EAPoL-Key) which is also 0 in this case<center></h5>
+	
+				
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.8 - Reserved Octets Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.8 Part a</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.8a.png" 
+	alt="MAC Button" style="width:670px;height:396px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Taken from Trace 1.3.8<br>The reserved bits are located in bits 4 and 5 of EAPoL-Key Message 1 and 3.<br>simple way to determine this is that the reserved flags aren't displayed under the Key Information meaning the reserved bits are not set (are 0).<center></h5>
+		
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.9 - Key MIC Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2, 11.6.6.3, and 11.6.6.5 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.9 Part a and b</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.9a.png" 
+	alt="MAC Button" style="width:798px;height:509px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Trace Taken from test 1.3.9<br>Part a: for EAPoL-Key Message 1 the Key MIC should have a value 0<br>part b: The Key MIC should be set to a correctly calulated value in EAPoL-Key Message 3<center></h5>
+
+				
+<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>APUT WPA2 Test 1.4.10 - Key Data and Length Field Formatting <br>IEEE Std 802.11™-2012 Edition, Subclause 11.6.2 and IEEE Std 802.1x™-2004 Edition, Subclause 7.6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.4.10 Part a and b</strong><center></h2>
+	<img src="Images/MacWPA2/1.4.10a.png" 
+	alt="MAC Button" style="width:671px;height:270px;border:0;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;border:2px; border-style:solid; border-color:black;">
+	<h5><center>Taken from Trace 1.3.10<br>As long as the APUT can successfully complete the 4-way handshake this is a Pass, otherwise most of what this test case is asking for is encrypted information.<center></h5>
+	
+	
+
+	
+	
+<center>
+
+<ul>
+		<center><p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+<br>
+	<br>
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+        $( ".footer #background" ).fadeIn();
+    } else {
+        console.log('there');
+        $( ".footer #background" ).fadeOut();
+    }
+});
+</script>
+<!--Main Header-->
+<header><h1 id="myP" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>WLAN Training: MAC WPA Testing For Stations (STAUT)</center></h1></header>
+	<a id="top"></a>
+<!--Navigation List-->
+	<ul id="menu" ><center>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+		<li><a href="General.html">General Knowledge</a></li>
+		<li><a href="Extra.html">New Hire Information</a></li>
+		<li><a href="Resources.html">Resources</a></li>
+		<li><a href="About.html">About</a></li>
+	</center></ul>  
+<title>MAC WPA Station</title>
+</head>
+
+<body>
+	<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center>These are all Visual Representations of what a Perfect Pass Looks Like for MAC Base Testing on an AP!<center></h2>
+	<center><ul style = "max-width:1500px">
+
+	
+
+	
+<!--Links to Jump around the page-->
+<h4 style="font-size: 20px; color:black;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); "><center>-Jump to a Specific Test-<center></h2>
+<center>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.1.1"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Test 1.1.1 - TKIP Countermeasures</button></a></p>
+<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#1.2.1"><button style="background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Test 1.1.2 - TKIP Replay Protection</button></a></p>
+	<br><br><center><a href="#x" align="center" title="Not all frames will be in perfect order.&#013;There are various sections shortened on this page to show specifically what to look for.&#013;The Babble frames are the bright yellow frames - these are purely informational (titles basically).&#013;The actual test MSDU/MPDU frame(s) shall be present after the babble frame.&#013;We are looking for how the DUT behaves with the reception of each test frame mostly.&#013;Other tests might require you to look deeper into frames to see specific values to determine if it's a Pass or Fail case&#013(Don't worry - it's not as hard as it looks - it just takes a little practice).&#013;Lastly it's okay to take periodic breaks and Happy MAC Testing!" style="padding:5px;text-align: center;border:2px; border-style:solid; border-color:black;background-color:white;color:#000000;text-decoration:none">Hover Here For Additional Information</a></center></center><br></center></center></center>
+</ul>
+
+
+<!--MAC WPA APUT Testing Starts-->
+<br>
+<!--Test 1.1.1-->
+	<a id="1.1.1"></a>
+
+	<h2 style="border-bottom: 2px solid darkred; border: 3px solid darkred;background-color: white;"><center><strong>Group 1 - Field Checking</strong></center></h2>
+
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>WPA Test 1.1.1 - TKIP Countermeasures<br> IEEE Std. 802.11-2012, Clause 11.4.2.4, 11.4.2.3 and WPA for 802.11 Version 2.0, Clause 3.1, Appendix H, Figures 5 and 6</strong></center></h2>
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part a</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1am.png" 
+	alt="MAC Button" style="float:left;width:420px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:215px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.1a.png" 
+	alt="MAC Button" style="width:593px;height:107px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> respond to each transmission of MSDU1 (frame 164)<br> with an Acknowledgement (Frame 165)<br> followed by an ICMP Echo Response frame (Frame 166)</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part b</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1bms.png" 
+	alt="MAC Button" style="float:left;width:496px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:70px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.1b.png" 
+	alt="MAC Button" style="width:753px;height:152px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> discard each transmission of MPDU2 (ICMP Echo Requests Frame 570 and 589)<br> this should be followed by transmitting a disassociation or deauthentication frame <br>with a reason code indicating a MIC failure in response to the second transmission of MSDU2.<br>The STAUT should also transmit a disassociation or deauthentication frame upon reception of MSDU1.</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part c</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1cms.png" 
+	alt="MAC Button" style="float:left;width:498px;height:48px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:70px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.1c.png" 
+	alt="MAC Button" style="width:755px;height:151px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> discard each transmission of MPDU3 (frames 269 and 286)<br> this should be followed by transmitting a disassociation or deauthentication frame <br>with a reason code indicating a MIC failure in response to the second transmission of MSDU3.<br>The STAUT should also transmit a disassociation or deauthentication frame upon reception of MSDU1.</center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part d</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1dms.png" 
+	alt="MAC Button" style="float:left;width:498px;height:48px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:70px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.1d.png" 
+	alt="MAC Button" style="width:733px;height:240px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> discard any transmissions of MSDU4 (frame 176).<br>The STAUT should also <u>not</u> send a disassociation or deauthentication frame upon reception of MSDU4.<br>The STAUT should then respond to MSDU1 with an Acknowledgement frame followed by an ICMP Echo Response<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part e</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1ems.png" 
+	alt="MAC Button" style="float:left;width:498px;height:48px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:70px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.1e.png" 
+	alt="MAC Button" style="width:739px;height:152px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT <u>Should</u> discard each transmission of MPDU5 (frame 194, represented as a data frame)<br> it <u>should not</u> be followed with a disassociation or deauthentication frame <br>The STAUT should also respond to MSDU1 with an Acknowledgement frame followed by an ICMP Echo Response.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.1 Part f</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.1fms.png" 
+	alt="MAC Button" style="float:left;width:498px;height:40px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:70px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.1f.png" 
+	alt="MAC Button" style="width:738px;height:166px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center><u>This is a Failure case</u><br>The STAUT <u>Should</u> discard both MPDU6 (frame 186)and MPDU3 (frame 198).<br> This should be followed by transmitting a disassociation or deauthentication frame <br>with a reason code indicating a MIC failure in response to the second transmission of MSDU3.<br>As you see here, the STAUT discards MSDU6 but responds to MSDU3 <br>on top of not sending a Deauth or disassociation containing a reason code indicateing a MIC failure<center></h5>
+	
+<center><ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+	<br>
+
+<!--Test 1.1.2-->
+	<a id="1.2.1"></a>
+
+	<h2 style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px;box-shadow: 10px 8px 16px 0px rgba(0,0,0,0.2);background-color: white;"><center><strong>WPA Test 1.1.2 - TKIP Replay Protection<br> IEEE Std. 802.11-20012, Clause 11.4.2.4, 11.4.2.3, and 11.4.2.1 and WPA for 802.11 version 2.0, Appendix H, Figures 5 and 6</strong></center></h2>
+
+
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part a</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2ams.png" 
+	alt="MAC Button" style="float:left;width:504px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2a.png" 
+	alt="MAC Button" style="width:713px;height:257px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center><u>This is a failure case</u><br>the STAUT should transmit the first group key with a TSC of 1 or 0.<br> you can find this number in the "TKIP Ext. Initialization Vector" field under IEEE 802.11 Data.<br> The STAUT should also respond to transmissions of MSDU1-MSDU2 with incrementing TSCs (ARP Requests and ICMP Echo Requests).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part b</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2bms.png" 
+	alt="MAC Button" style="float:left;width:504px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.2b.png" 
+	alt="MAC Button" style="width:764px;height:434px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT should use incrementing TSCs for each response to the transmission of MSDU2 (ICMP Echo Request).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part c</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2ams.png" 
+	alt="MAC Button" style="float:left;width:504px;height:29px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/1.1.2c.png" 
+	alt="MAC Button" style="width:712px;height:378px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>This is similiar to 1.1.2 Part a<br>The STAUT should transmit the first Group Key with a TSC of 1 or 0,<br>The Group Key is represented as a Data frame on this trace.<br>The STAUT should also increment the TSCs for each transmission of MSDU1-MSDU2 (ARP Requests and ICMP Echo Requests).<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part d</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2dms.png" 
+	alt="MAC Button" style="float:left;width:507px;height:33px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.2d.png" 
+	alt="MAC Button" style="width:742px;height:194px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT should discard both transmissions of MSDU4 after Acknowledging both.<br> The STAUT should then respond to MSDU1 with an ARP Response.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part e</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2ems.png" 
+	alt="MAC Button" style="float:left;width:507px;height:123px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.2e.png" 
+	alt="MAC Button" style="width:747px;height:137px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center>The STAUT should Acknowledge and forward an ICMP Echo Response to MSDU5-11. <br>The STAUT should then discard MSDU12.<center></h5>
+	
+	<h2 style="border:1px; border-style:solid; border-color:black; padding: 0em;"><center><strong>Test 1.1.2 Part f</strong><center></h2>
+	<center><img src="Images/MacWPA/1.1.2fms.png" 
+	alt="MAC Button" style="float:left;width:507px;height:15px;border:5px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);margin-right:-600px;border:2px; border-style:solid; border-color:black;"></center>
+	<img src="Images/MacWPA/STA/1.1.2f.png" 
+	alt="MAC Button" style="width:748px;height:198px;border:0;border:2px;border-style:solid; border-color:black;">
+	<h5><center><u>This Test is Informational</u><br>The STAUT may send a Deauthentication or Disassociation in response to the second transmition of MSDU2.<br>As you see here, the STAUT responded to MSDU2 and did not Deauthenticate of Disassociate.<center></h5>
+	<br>
+<center><ul>
+		<p style="Display: inline;padding: 0px;"> <a class="hover"  href="#top"><button style=" background-color: white;border:2px; border-style:solid; border-color:black; padding: .5em; border-radius: 20px; font-size: 20px; color: black; cursor: pointer; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Back to the top!</button></a></p>
+		</ul>
+	<br>
+
+
+
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

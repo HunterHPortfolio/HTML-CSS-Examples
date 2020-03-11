@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The HTML File :P-->
+
+<head>
+<!--CSS Sheet-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body>
+<!--Main Header-->
+<header><h1><center>WLAN Training Setup - MAC Conformance</center></h1></header>
+
+<!--Navigation List-->
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+<title>MAC Setup</title>
+<!--Body Paragraphs-->
+
+<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>Steps for Setting up the MAC TS (Testing Station) and Software Usage</strong></center></h3>
+<h5 align="left" style="padding: 20px">All of the MAC testing uses the TS with the DK Atheros Card hardware installed, as well as the Sniffer TS equiped with a packet sniffer.<br> In order to set up MAC testing - follow these steps: </h5>
+<ul><br>
+<strong>1:</strong> On the MAC TS, navigate to C:\Program Files\DK and locate MAC.txt 
+<br>
+<strong>2:</strong> Comment out the previous device and enter the new device being tested with the same information as the device that was commented out.
+<br>
+<strong>3:</strong> Configure the MAC Address and IP -> SSID should be "MAC"
+<br>
+<strong>4:</strong> Open the Command prompt and type this command: "CD C:\Program Files\DK>mdk"     (Don't Press Enter)
+<br>
+<strong>5:</strong> Open the Folder on desktop that has all the current MAC Scripts and find the test you are conducting (labeled appropriately) 
+<br>
+<strong>6:</strong> Drag the script file into the command prompt (it should have mdk now followed by script location)
+<br>
+<strong>7:</strong> Open Omnipeek in order to capture all of the MAC frames
+<br>
+<strong>8:</strong> Start OmniPeek capture followed by pressing enter in the command window 
+<br>
+<strong>9:</strong> Hit Ctrl-S on OmniPeek, save the results.
+<br>
+<strong>10:</strong> Make sure to run each test twice! Have fun!
+ </p>
+ <br></ul>
+<p><center><strong>Physical Setup Image</strong><center></p>
+<img style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" src="Resources/Setups/MAC/MACSetup.png" 
+	alt="MAC Button" style="width:597px;height:328px;border:0;">
+<br>
+<br><br>
+<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>Settings to Change While Running a MAC Base Test</strong></center></h3>
+<ul>
+<p align="left" style="padding: 20px"><strong>Test 1.1.3:</strong> Continuously Ping the TS (from the Sniffer, Run the Command Prompt, Enter "ping 192.168.1.101 -t") <br>Some tests you might have to start first then ping.<br>
+<strong>Test 1.1.5:</strong> Continuously Ping the TS<br>
+<strong>Test 1.1.6:</strong> Continuously Ping the TS <br>
+<strong>Test 1.1.9:</strong> Set Fragmentation to 256 (Could be complicated but if it's not configurable via GUI),<br> an example command if you are using the terminal to change a devices settings is to enter this command "iwconfig ath0 frag 256"<br> 
+<strong>Test 1.1.12:</strong> Continuously Ping the TS<br>
+<strong>Test 1.2.1a:</strong> Set Fragmentation to 2346 (or off) and RTS to 512 "iwconfig ath0 rts 256"<br>
+<strong>Test 1.2.1b:</strong> Set Fragmentation to 512 and RTS to 512<br>
+<strong>Test 1.2.2a:</strong> Set Fragmentation to 512 and RTS to 256<br>
+<strong>Test 1.2.2b:</strong> Set Fragmentation to off and RTS to 1024<br>
+<strong>Test 1.2.3:</strong> Set Fragmentation to 512 and RTS to 512<br>
+<strong>Test 1.2.4a:</strong> Set Fragmentation to 512 and RTS to 600<br>
+<strong>Test 1.2.4b:</strong> Set Fragmentation to 301 and RTS to off<br>
+<strong>Test 1.2.5a:</strong> Set Fragmentation to off and RTS to 256<br>
+<strong>Test 1.2.6:</strong> Set Fragmentation to off and RTS to 512</p>
+</ul>
+<br>
+<br>
+</body>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>

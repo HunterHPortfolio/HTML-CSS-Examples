@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<!--Welcome To The Resources HTML File :P-->
+
+<head>
+<!--CSS Sheet, Tab Icon, and Javascript reference-->
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="icon" href="http://www.iconarchive.com/download/i83707/custom-icon-design/mono-general-3/wifi.ico">
+<script type="text/javascript" src="DropDown.js"></script>
+<script>
+$(document).ready(function(){
+    $(".btn1").click(function(){
+        $("p").slideUp();
+    });
+    $(".btn2").click(function(){
+        $("p").slideDown();
+    });
+});
+</script>
+<style>
+<!-- Navigation List Styling-->
+
+</style>
+</head>
+
+<body >
+<!--Main Header-->
+<header><h1><center>WLAN Training - Resources</center></h1></header>
+
+
+<!--Navigation List-->
+<nav class="menu1">
+<ul id="menu"><center>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="Walkthroughs.html">Walkthroughs</a></li>
+	<li><a href="General.html">General Knowledge</a></li>
+	<li><a href="Extra.html">New Hire Information</a></li>
+	<li><a href="Resources.html">Resources</a></li>
+	<li><a href="About.html">About</a></li>
+</center></ul>  
+</nav>
+<!--Learn To Create Navigation Buttons For Each WebPage, Put Them Here-->
+<title>Resources</title>
+<!--Intro Line-->
+<h3 style="border-bottom: 2px solid darkred; border-top: 2px solid darkred; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"><center><strong>You will find multiple resources here for easier reference - Use the Dropdown Menus Below!</strong></center></h3>
+<center>
+<!--Dropdown menus for the Test Suite, IEEE Standard, and Report Template buttons-->
+<nav class="nav">
+<div id="menuwrap">
+<div class="container">
+<div  class="dropdown" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+  <button onmouseover="myFunction()" class="dropbtn" style=" box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Test Suites</button>
+  <div class="dropdown-content">
+<a href="Resources/Test Suites/Interop/802.11abgn_Infrastructure_Interoperability_Test_Suite_v4.5.pdf">
+Interoperability Test Suite</a>
+<a href="Resources/Test Suites/RvT/802.11abgnac_Range_vs_Throughput_Test_Suite_v1.1.pdf">
+Range vs. Throughput Test Suite</a> 
+<a href="Resources/Test Suites/MAC/Base/802.11_Base_AP_MAC_Test_Suite_v3.6.pdf">
+MAC Base AP Test Suite</a>
+<a href="Resources/Test Suites/MAC/Base/802.11_Base_STA_MAC_Test_Suite_v3.4.pdf">
+MAC Base STA Test Suite</a>
+<a href="Resources/Test Suites/MAC/WPA/WPA_AP_MAC_Test_Suite_v2.5.pdf">
+MAC WPA AP Test Suite</a>
+<a href="Resources/Test Suites/MAC/WPA/WPA_STA_MAC_Test_Suite_v2.5.pdf">
+MAC WPA STA Test Suite</a>
+<a href="Resources/Test Suites/MAC/WPA2/802.11_AP_WPA2_MAC_Conformance_Test_Suite_v2.5.pdf">
+MAC WPA2 AP Test Suite</a>
+<a href="Resources/Test Suites/MAC/WPA2/802.11_STA_WPA2_MAC_Conformance_Test_Suite_v2.4.pdf">
+MAC WPA2 STA Test Suite</a>
+  </div>
+</div>
+
+<div class="dropdown4" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+  <button onmouseover="myFunction4()" class="dropbtn4" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Example Reports</button>
+  <div class="dropdown-content4">
+  <a href="Resources/Filled Reports/Cybex_Ikabit-Dongle_802.11abgn_Infrastructure_Interoperability_v4.5_Report_v1.0.pdf">
+Interoperability Example Report</a>
+  <a href="Resources/Filled Reports/Sony_XperiaZ3_802.11abgnac_Range_vs_Throughput_v2.0_Report.pdf">
+Range Vs. Throughput Example Report</a>
+  <a href="Resources/Filled Reports/Luma_802.11-Base-AP-MAC-Test-Suite-v3.6_Report-v1.0.pdf">
+MAC Base AP Example Report</a>
+  <a href="Resources/Filled Reports/Marvell_SD8887-15.68.0.p163_802.11-Base-STA-MAC-Report-v3.4_Report-v1.0.pdf">
+MAC Base STA Example Report</a>
+  <a href="Resources/Filled Reports/802.11_WPA_AP_MAC_Report_Solectria_v1.pdf">
+MAC WPA AP Example Report</a>
+  <a href="Resources/Filled Reports/Marvell_SD8887-15.68.0.p163_802.11-WPA-STA-MAC-Test-Suite-v2.5_Report-v1.0.pdf">
+MAC WPA STA Example Report</a>
+  <a href="Resources/Filled Reports/Luma_AP-WPA2-MAC-Test-Suite-v2.5_Report-v1.0.pdf">
+MAC WPA2 AP Example Report</a>
+  <a href="Resources/Filled Reports/Cybex_MAC_WPA2_STA_Report_v1.0.pdf">
+MAC WPA2 STA Example Report</a>
+    </div>
+</div>
+
+<div class="dropdown3" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+  <button onmouseover="myFunction3()" class="dropbtn3" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Report Templates</button>
+  <div class="dropdown-content3">
+  <a href="Resources/Report Templates/802.11abgn Infrastructure Interoperability Test Report v4.5 Template.dotx">
+Interoperability Report Template</a>
+  <a href="Resources/Report Templates/802.11abgnac_Range_vs_Throughput_v2.0_Report_Template.dotm" download>
+Range Vs. Throughput Report Template</a>
+  <a href="Resources/Report Templates/802.11_Base_AP_MAC_Report_Template_v3.6.dotx">
+MAC Base AP Report Template</a>
+  <a href="Resources/Report Templates/802.11_Base_STA_MAC_v3.4_Report_Template.docx">
+MAC Base STA Report Template</a>
+  <a href="Resources/Report Templates/802.11_WPA_AP_MAC_Template_v2.5.dotx">
+MAC WPA AP Report Template</a>
+  <a href="Resources/Report Templates/802.11_WPA_STA_MAC_Template_v2.5.dotx">
+MAC WPA STA Report Template</a>
+  <a href="Resources/Report Templates/802.11_AP_WPA2_MAC_Conformance_Report_Template_v.2.5.dotx">
+MAC WPA2 AP Report Template</a>
+  <a href="Resources/Report Templates/802.11_STA_WPA2_MAC_Conformance_Report_Template_v.2.4.dotx">
+MAC WPA2 STA Report Template</a>
+    </div>
+</div>
+
+
+<div class="dropdown5" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+  <button onmouseover="myFunction5()" class="dropbtn5"  style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Training Projects</button>
+  <div class="dropdown-content5">
+  <a href="Resources/Projects/Wireless MAC Training Project.pdf">
+MAC Training Project</a>
+  <a href="Resources/Projects/Wireless Interop Training Project.pdf">
+Interoperability Training Project</a>
+  <a href="Resources/Projects/Wireless Range vs. Throughput Training Project.pdf">
+RvT Training Project</a>
+    </div>
+</div>
+
+<div class="dropdown2" style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">
+  <button onmouseover="myFunction2()" class="dropbtn2"  style="box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">IEEE Standards</button>
+  <div class="dropdown-content2">
+  <a href="Resources/802.11-2012_Highlighted for training.pdf">
+802.11-2012 Edition</a>
+  <a href="Resources/802.1X-2004.pdf">
+802.1x-2004 Edition</a>
+  <a href="Resources/WPAfor802.11.pdf">
+WPA for 802.11</a>
+    </div>
+</div>
+</div>
+</div>
+
+</nav>
+<div id="footer">
+<center><p style="border:2px; border-style:solid; border-color:black; padding: 0em; border-radius: 20px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); background-color: lightgrey;">WLAN Training - <a  style="text-decoration: none;" href="file://fox/group/WLAN/Training/HTML%20WLAN/Files/Sitemap.html#">Sitemap</a></p></center>
+</div>
+</html>
