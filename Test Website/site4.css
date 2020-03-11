@@ -1,0 +1,147 @@
+/* site.css */
+
+header {
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  background-image: url("Background Image3.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+
+}
+
+
+.title{
+  font-family: verdana;
+}
+
+.body {
+font-family: verdana;
+padding-right: 30px;
+}
+
+.textBody {
+
+background-color: rgba(191, 216, 172, 0.5);
+
+}
+
+.Navigation a {
+  background-color: #ccc
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.Navigation {
+  width: 200px;
+  background-color: #e6e6ff;
+  font-size: 1.875em;
+  text-align: center;
+  font-family: garamond;
+
+}
+
+.Navigation a:hover {
+  background-color: #e6e6e6;
+  border-left: 6px solid;
+  border-color: black;
+}
+
+.Navigation a.active {
+  background-color: #ccc;
+  color: black;
+  font-style: bold;
+  border-left: 6px solid;
+  border-color: #3281ff;
+}
+
+.columnOne {
+  float: left;
+  width: 20%;
+  padding-left: 10px;
+  padding-bottom: 250px;
+}
+
+.container{
+  background-color: rgba(230, 230, 255, 0.6);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text], select, textarea {
+  width: 30%; 
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 4px
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  width: 80%; 
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+
+  padding: 1rem;
+
+  color: black;
+  background: #6fd15c;
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: blue;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(250, 224, 66, .2);
+  border-bottom: 1px solid rgba(250, 224, 66, .45);
+
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 650px;
+}
